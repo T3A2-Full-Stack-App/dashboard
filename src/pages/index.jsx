@@ -1,9 +1,9 @@
 export { default as Runs } from "./Runs";
 export { default as Kanban } from "./Kanban";
-export { default as Orders } from "./Orders";
+export { default as Drivers } from "./Drivers";
 export { default as Employees } from "./Employees";
 export { default as Editor } from "./Editor";
-export { default as Customers } from "./Customers";
+export { default as Vehicles } from "./Vehicles";
 export { default as ColorPicker } from "./ColorPicker";
 export { default as Calendar } from "./Calendar";
 export { default as Area } from "./Charts/Area";

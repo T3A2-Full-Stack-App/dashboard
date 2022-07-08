@@ -23,6 +23,10 @@ import {
   BsShield,
   BsChatLeft,
 } from "react-icons/bs";
+import { 
+  FaRoute,
+}
+from "react-icons/fa"
 import { BiColorFill } from "react-icons/bi";
 import { IoMdContacts } from "react-icons/io";
 import { RiContactsLine, RiStockLine } from "react-icons/ri";
@@ -515,7 +519,7 @@ export const links = [
     links: [
       {
         name: "Routes",
-        icon: <FiTruck />,
+        icon: <FaRoute />,
       },
     ],
   },
@@ -523,17 +527,17 @@ export const links = [
   {
     title: "Pages",
     links: [
+      // {
+      //   name: "orders",
+      //   icon: <AiOutlineShoppingCart />,
+      // },
       {
-        name: "orders",
-        icon: <AiOutlineShoppingCart />,
-      },
-      {
-        name: "employees",
+        name: "Drivers",
         icon: <IoMdContacts />,
       },
       {
-        name: "customers",
-        icon: <RiContactsLine />,
+        name: "Vehicles",
+        icon: <FiTruck />,
       },
     ],
   },
