@@ -25,8 +25,9 @@ import {
 } from "react-icons/bs";
 import { 
   FaRoute,
-}
-from "react-icons/fa"
+} from "react-icons/fa"
+import { RiDashboardFill } from "react-icons/ri";
+
 import { BiColorFill } from "react-icons/bi";
 import { IoMdContacts } from "react-icons/io";
 import { RiContactsLine, RiStockLine } from "react-icons/ri";
@@ -515,11 +516,11 @@ export const employeesGrid = [
 
 export const links = [
   {
-    title: "Dashboard",
+    // title: "Dashboard",
     links: [
       {
-        name: "Routes",
-        icon: <FaRoute />,
+        name: "Dashboard",
+        icon: <RiDashboardFill />,
       },
     ],
   },
@@ -527,10 +528,10 @@ export const links = [
   {
     title: "Pages",
     links: [
-      // {
-      //   name: "orders",
-      //   icon: <AiOutlineShoppingCart />,
-      // },
+      {
+        name: "Routes",
+        icon: <FaRoute />,
+      },
       {
         name: "Drivers",
         icon: <IoMdContacts />,
@@ -664,14 +665,14 @@ export const earningData = [
     icon: <BsBoxSeam />,
     amount: "4,396",
     percentage: "+23%",
-    title: "Products",
+    title: "Deliveries",
     iconColor: "rgb(255, 244, 229)",
     iconBg: "rgb(254, 201, 15)",
     pcColor: "green-600",
   },
   {
     icon: <FiBarChart />,
-    amount: "423,39",
+    amount: "42,339",
     percentage: "+38%",
     title: "Sales",
     iconColor: "rgb(228, 106, 118)",
