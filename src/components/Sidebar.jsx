@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { SiShopware } from "react-icons/si";
+import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineCancel } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
@@ -31,7 +31,7 @@ const Sidebar = () => {
               text-xl font-extrabold tracking-tight dark:text-white
               text-slate-900"
             >
-              <SiShopware /> <span>Fleetz</span>
+              <TbTruckDelivery /> <span>Fleetz</span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
