@@ -30,7 +30,6 @@ export default function Signup() {
         <RadioBtn />
         {fields.map((field) => (
           <Input
-            type="radio"
             key={field.id}
             handleChange={handleChange}
             value={signupState[field.id]}
