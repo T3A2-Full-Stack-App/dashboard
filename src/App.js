@@ -24,6 +24,9 @@ import {
   Drivers,
 } from "./pages";
 
+import SignupPage from "./pages/Signup";
+import SigninPage from "./pages/Signin";
+
 import { useStateContext } from "./contexts/ContextProvider";
 
 import "./App.css";
@@ -68,8 +71,12 @@ const App = () => {
             <div>
               <Routes>
                 {/* Dashboard */}
-                <Route path="/" element={<Dashboard />} />
+                <Route exact path="/" element={<Dashboard />} />
                 <Route path="/dashboard" element={<Dashboard />} />
+
+                {/* Login */}
+                <Route path="/login" element={<SigninPage />} />
+                <Route path="/signup" element={<SignupPage />} />
 
                 {/* Pages */}
                 <Route path="/runs" element={<Runs />} />
