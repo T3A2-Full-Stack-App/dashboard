@@ -1,8 +1,9 @@
 import { useState } from "react";
+import React from "react";
 import { signupFields } from "../Login/formFields";
 import FormAction from "./FormAction";
 import Input from "./Input";
-import RadioBtn from "./RadioBtn";
+
 
 const fields = signupFields;
 let fieldsState = {};
@@ -10,7 +11,12 @@ let fieldsState = {};
 fields.forEach((field) => (fieldsState[field.id] = ""));
 
 export default function Signup() {
+  const [role, setRole] = React.useState("");
   const [signupState, setSignupState] = useState(fieldsState);
+
+    const handleRadioClick = (e) => {
+      setRole(e.target.value);
+    };
 
   const handleChange = (e) =>
     setSignupState({ ...signupState, [e.target.id]: e.target.value });
@@ -26,8 +32,26 @@ export default function Signup() {
 
   return (
     <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="">
-        <RadioBtn />
+      <div className="mt-2">
+        <label>
+          <input
+            type="radio"
+            value="admin"
+            checked={role === "admin"}
+            onChange={handleRadioClick}
+            class="form-radio"
+          />
+          <span class="ml-2">Admin</span>
+        </label> <br></br>
+        <label>
+          <input
+            type="radio"
+            value="driver"
+            checked={role === "driver"}
+            onChange={handleRadioClick}
+          />
+          <span class="ml-2">Driver</span>
+        </label>
         {fields.map((field) => (
           <Input
             key={field.id}

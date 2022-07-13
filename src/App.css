@@ -53,5 +53,5 @@
 .e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left),
 .e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left),
 .e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left) {
-    border: none;
+border: none;
 }
