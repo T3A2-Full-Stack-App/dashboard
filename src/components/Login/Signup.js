@@ -11,7 +11,7 @@ let fieldsState = {};
 fields.forEach((field) => (fieldsState[field.id] = ""));
 
 export default function Signup() {
-  const [role, setRole] = React.useState("");
+  const [role, setRole] = React.useState();
   const [signupState, setSignupState] = useState(fieldsState);
 
     const handleRadioClick = (e) => {
