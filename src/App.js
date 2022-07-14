@@ -22,6 +22,7 @@ import {
   Editor,
   Runs,
   Drivers,
+  DriverVehicle,
 } from "./pages";
 
 import { useStateContext } from "./contexts/ContextProvider";
@@ -84,6 +85,7 @@ const App = () => {
                 <Route path="/drivers" element={<Drivers />} />
                 <Route path="/employees" element={<Employees />} />
                 <Route path="/vehicles" element={<Vehicles />} />
+                <Route path="/my-vehicle" element={<DriverVehicle />} />
 
                 {/* Apps */}
                 <Route path="/kanban" element={<Kanban />} />
