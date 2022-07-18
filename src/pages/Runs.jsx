@@ -1,57 +1,34 @@
 import React from "react";
 import {
-  GridComponent,
-  ColumnsDirective,
-  ColumnDirective,
-  Resize,
-  Sort,
-  ContextMenu,
-  Filter,
-  Page,
-  ExcelExport,
-  PdfExport,
-  Edit,
+  ScheduleComponent,
+  Day,
+  Week,
+  WorkWeek,
+  Month,
+  Agenda,
   Inject,
-} from "@syncfusion/ej2-react-grids";
+  Resize,
+  DragAndDrop,
+} from "@syncfusion/ej2-react-schedule";
 
-import { runsData, contextMenuItems, runsGrid } from "../data/dummy";
+import { scheduleData } from "../data/runsData";
 import { Header } from "../components";
 
 const Runs = () => {
-  const editing = { allowDeleting: true, allowEditing: true };
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category="Page" title="Runs" />
-      <GridComponent
-        id="gridcomp"
-        dataSource={runsData}
-        allowPaging
-        allowSorting
-        allowExcelExport
-        allowPdfExport
-        contextMenuItems={contextMenuItems}
-        editSettings={editing}
+      <Header category="App" title="Plan Runs" />
+      <ScheduleComponent
+        height="650px"
+        eventSettings={{ dataSource: scheduleData }}
+        selectedDate={new Date(2021, 0, 10)}
       >
-        <ColumnsDirective>
-          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          {runsGrid.map((item, index) => (
-            <ColumnDirective key={index} {...item} />
-          ))}
-        </ColumnsDirective>
         <Inject
-          services={[
-            Resize,
-            Sort,
-            ContextMenu,
-            Filter,
-            Page,
-            ExcelExport,
-            Edit,
-            PdfExport,
-          ]}
+          services={[Day, Week, WorkWeek, Month, Agenda, Resize, DragAndDrop]}
         />
-      </GridComponent>
+      </ScheduleComponent>
     </div>
   );
 };
+
 export default Runs;
