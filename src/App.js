@@ -22,6 +22,7 @@ import {
   Editor,
   Runs,
   Drivers,
+  DriverVehicle,
   VehicleList,
 } from "./pages";
 
@@ -85,6 +86,8 @@ const App = () => {
                 <Route path="/drivers" element={<Drivers />} />
                 <Route path="/employees" element={<Employees />} />
                 <Route path="/vehicles" element={<VehicleList />} />
+                <Route path="/vehicles" element={<Vehicles />} />
+                <Route path="/my-vehicle" element={<DriverVehicle />} />
                 <Route path="/vehicle-list" element={<VehicleList />} />
 
                 {/* Apps */}
