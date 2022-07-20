@@ -72,8 +72,8 @@ const DriverSidebar = () => {
               <span className="capitalize">My Vehicle</span>
             </NavLink>
             <NavLink
-              to='/driver/schedule'
-              key='Schedule'
+              to='/driver/route'
+              key='Route'
               onClick={handleCloseSideBar}
               style={({ isActive }) => ({
                 backgroundColor: isActive ? currentColor : "",
@@ -83,7 +83,7 @@ const DriverSidebar = () => {
               }
             >
               {<FaRoute />}
-              <span className="capitalize">Schedule</span>
+              <span className="capitalize">My Route</span>
             </NavLink>
               <NavLink
               to='/calendar'

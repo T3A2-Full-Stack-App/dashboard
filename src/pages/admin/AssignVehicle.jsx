@@ -38,6 +38,7 @@ function AssignVehicle() {
   };
 
   return (
+    <>
     <div className="flex justify-center">
       <form
         onSubmit={handleSubmit}
@@ -48,12 +49,7 @@ function AssignVehicle() {
             New Vehicle
           </h2>
         </div>
-        <Link
-          to="/vehicles"
-          className="font-medium text-teal-500 hover:text-teal-200 "
-        >
-          Back to Vehicle Lists
-        </Link>
+        
         <div className="mt-3 mb-4 -space-y-px">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             Driver:
@@ -129,8 +125,15 @@ function AssignVehicle() {
         <button class="h-8 px-4 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
           Assign
         </button>
+        <Link
+          to="/vehicles"
+          className="flex justify-center font-medium mt-8 text-teal-500 hover:text-teal-200 "
+        >
+          Back to Vehicle Lists
+        </Link>
       </form>
     </div>
+    </>
   );
 }
 
