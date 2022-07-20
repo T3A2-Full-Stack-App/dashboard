@@ -45,7 +45,7 @@ function AssignVehicle() {
       >
         <div className="flex justify-center">
           <h2 className="mt-2 text-center text-3xl font-extrabold text-gray-900">
-            Assign Driver Vehicle
+            New Vehicle
           </h2>
         </div>
         <Link
