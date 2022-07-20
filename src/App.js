@@ -6,9 +6,8 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import DriverDashboard from "./pages/DriverDashboard";
 
-import { Navbar, Sidebar, ThemeSettings } from "./components";
+import { Navbar, Sidebar, ThemeSettings, DriverSidebar } from "./components";
 import {
   Dashboard,
   Calendar,
@@ -63,9 +62,10 @@ const App = () => {
         });
       }
     };
-
     checkLoggedIn();
   }, []);
+
+
   if (!userData.user) {
     return (
       <BrowserRouter>
@@ -79,16 +79,12 @@ const App = () => {
         </UserContext.Provider>
       </BrowserRouter>
     );
-  } else {
+
+  } else if (userData.user.role === "admin") {
     return (
       <div className={currentMode === "Dark" ? "dark" : ""}>
         <BrowserRouter>
           <UserContext.Provider value={{ userData, setUserData }}>
-            {userData.user.role === "admin" ? (
-              <Dashboard />
-            ) : (
-              <DriverDashboard />
-            )}
             <div className="flex relative dark:bg-main-dark-bg">
               <div
                 className="fixed right-4 bottom-4"
@@ -117,38 +113,80 @@ const App = () => {
                 </div>
               )}
               <div
-                className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${
-                  activeMenu ? "md:ml-72" : "flex-2"
-                }`}
+                className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${activeMenu ? "md:ml-72" : "flex-2"
+                  }`}
               >
                 <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
                   <Navbar />
                 </div>
-
                 <div>
                   {themeSettings && <ThemeSettings />}
                   <Routes>
-                    <Route path="/" element={<Runs />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/login" element={<Login />} />
                     <Route path="/runs" element={<Runs />} />
                     <Route path="/drivers" element={<Drivers />} />
                     <Route path="/vehicles" element={<VehicleList />} />
                     <Route path="/calendar" element={<Calendar />} />
-                    <Route
-                      path="/drivers/vehicle"
-                      element={<DriverVehicle />}
-                    />
-                    <Route
-                      path="/drivers/schedule"
-                      element={<DriverSchedule />}
-                    />
+                    <Route path="/drivers/vehicle" element={<DriverVehicle />} />
                     <Route path="/assign-vehicle" element={<AssignVehicle />} />
                     <Route path="/driver/vehicle" element={<DriverVehicle />} />
-                    <Route
-                      path="/driver/schedule"
-                      element={<DriverSchedule />}
-                    />
+                    <Route path="*" element={<Runs />} />
+                  </Routes>
+                </div>
+              </div>
+            </div>
+          </UserContext.Provider>
+        </BrowserRouter>
+      </div>
+    );
+
+  } else if (userData.user.role === 'driver') {
+    return (
+      <div className={currentMode === "Dark" ? "dark" : ""}>
+        <BrowserRouter>
+          <UserContext.Provider value={{ userData, setUserData }}>
+            <div className="flex relative dark:bg-main-dark-bg">
+              <div
+                className="fixed right-4 bottom-4"
+                style={{ zIndex: "1000" }}
+              >
+                <TooltipComponent content="Settings" position="Top">
+                  <button
+                    type="button"
+                    className="text-3xl p-3 
+                                hover:drop-shadow-xl
+                                hover:bg-light-gray text-white"
+                    onClick={() => setThemeSettings(true)}
+                    style={{ background: currentColor, borderRadius: "50%" }}
+                  >
+                    <FiSettings />
+                  </button>
+                </TooltipComponent>
+              </div>
+              {activeMenu ? (
+                <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
+                  <DriverSidebar />
+                </div>
+              ) : (
+                <div className="w-0 dark:bg-secondary-dark-bg">
+                  <DriverSidebar />
+                </div>
+              )}
+              <div
+                className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${activeMenu ? "md:ml-72" : "flex-2"
+                  }`}
+              >
+                <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
+                  <Navbar />
+                </div>
+                <div>
+                  {themeSettings && <ThemeSettings />}
+                  <Routes>
+                    <Route path="/calendar" element={<Calendar />} />
+                    <Route path="/drivers/vehicle" element={<DriverVehicle />}/>
+                    <Route path="/drivers/schedule" element={<DriverSchedule />}/>
+                    <Route path="/driver/vehicle" element={<DriverVehicle />} />
+                    <Route path="/driver/schedule" element={<DriverSchedule />} />
+                    <Route path="*" element={<DriverVehicle />} />
                   </Routes>
                 </div>
               </div>

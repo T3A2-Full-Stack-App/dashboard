@@ -58,7 +58,7 @@ const DriverVehicle = () => {
             placeholder="Enter Kilometers"
           ></input>
           <button class="h-8 px-4 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
-            Button
+            Submit
           </button>
           <div className="font-medium text-lg mt-5">
             Vehicle Condition Comments
@@ -70,7 +70,7 @@ const DriverVehicle = () => {
             ></textarea>
           </form>
           <button class="h-8 px-4 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
-            Button
+            Submit
           </button>
         </div>
       </div>

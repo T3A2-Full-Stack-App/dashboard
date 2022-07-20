@@ -2,14 +2,14 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FiTruck } from "react-icons/fi";
-import { FaRoute } from "react-icons/fa";
 import { AiOutlineCalendar } from "react-icons/ai";
-import { IoMdContacts } from "react-icons/io";
 import { MdOutlineCancel } from "react-icons/md";
+import { FaRoute } from "react-icons/fa";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { useStateContext } from "../contexts/ContextProvider";
 
-const Sidebar = () => {
+
+const DriverSidebar = () => {
   const { activeMenu, setActiveMenu, screenSize, currentColor } =
     useStateContext();
 
@@ -23,9 +23,10 @@ const Sidebar = () => {
     "flex item-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2";
   const normalLink =
     "flex item-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2";
-return (
+
+  return (
     <div
-      className="ml-3 h-screen
+      className="ml-3 h-screen 
     md:overflow-hidden overflow-auto
     md:hover:overflow-auto pb-10"
     >
@@ -57,8 +58,8 @@ return (
           <div className="mt-10">
             <p className="text-gray-400 m-3 mt-4 uppercase">Pages</p>
               <NavLink
-              to='/runs'
-              key='runs'
+              to='/driver/vehicle'
+              key='vehicle'
               onClick={handleCloseSideBar}
               style={({ isActive }) => ({
                 backgroundColor: isActive ? currentColor : "",
@@ -67,26 +68,12 @@ return (
                 isActive ? activeLink : normalLink
               }
             >
-              {<FaRoute/>}
-              <span className="capitalize">Runs</span>
-          </NavLink>
-          <NavLink
-              to='/drivers'
-              key='Drivers'
-              onClick={handleCloseSideBar}
-              style={({ isActive }) => ({
-                backgroundColor: isActive ? currentColor : "",
-              })}
-              className={({ isActive }) =>
-                isActive ? activeLink : normalLink
-              }
-            >
-              {<IoMdContacts />}
-              <span className="capitalize">Drivers</span>
+              {<FiTruck/>}
+              <span className="capitalize">My Vehicle</span>
             </NavLink>
             <NavLink
-              to='/vehicles'
-              key='Vehicles'
+              to='/driver/schedule'
+              key='Schedule'
               onClick={handleCloseSideBar}
               style={({ isActive }) => ({
                 backgroundColor: isActive ? currentColor : "",
@@ -95,10 +82,9 @@ return (
                 isActive ? activeLink : normalLink
               }
             >
-              {<FiTruck />}
-              <span className="capitalize">Vehicles</span>
-          </NavLink>
-          
+              {<FaRoute />}
+              <span className="capitalize">Schedule</span>
+            </NavLink>
               <NavLink
               to='/calendar'
               key='Calendar'
@@ -118,7 +104,6 @@ return (
       )}
     </div>
   );
-  
 };
 
-export default Sidebar;
+export default DriverSidebar;
