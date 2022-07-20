@@ -181,8 +181,8 @@ const App = () => {
                   {themeSettings && <ThemeSettings />}
                   <Routes>
                     <Route path="/calendar" element={<Calendar />} />
-                    <Route path="/drivers/vehicle" element={<DriverVehicle />}/>
-                    <Route path="/drivers/schedule" element={<DriverSchedule />}/>
+                    <Route path="/driver/vehicle" element={<DriverVehicle />}/>
+                    <Route path="/driver/schedule" element={<DriverSchedule />}/>
                     <Route path="/driver/vehicle" element={<DriverVehicle />} />
                     <Route path="*" element={<DriverVehicle />} />
                   </Routes>
