@@ -18,7 +18,10 @@ import {
   Drivers,
   DriverVehicle,
   VehicleList,
+  AssignVehicle,
 } from "./pages";
+
+import DriverSchedule from "./pages/DriverSchedule";
 
 import { useStateContext } from "./contexts/ContextProvider";
 
@@ -125,21 +128,27 @@ const App = () => {
                 <div>
                   {themeSettings && <ThemeSettings />}
                   <Routes>
-                    {/* Dashboard */}
-                    <Route path="/" element={<Dashboard />} />
-                    <Route path="/dashboard" element={<Dashboard />} />
-
-                    {/* Pages */}
+                    <Route path="/" element={<Runs />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/login" element={<Login />} />
                     <Route path="/runs" element={<Runs />} />
                     <Route path="/drivers" element={<Drivers />} />
-                    <Route path="/employees" element={<Employees />} />
                     <Route path="/vehicles" element={<VehicleList />} />
-                    <Route path="/vehicles" element={<Vehicles />} />
-                    <Route path="/my-vehicle" element={<DriverVehicle />} />
-                    <Route path="/vehicle-list" element={<VehicleList />} />
-
-                    {/* Apps */}
                     <Route path="/calendar" element={<Calendar />} />
+                    <Route
+                      path="/drivers/vehicle"
+                      element={<DriverVehicle />}
+                    />
+                    <Route
+                      path="/drivers/schedule"
+                      element={<DriverSchedule />}
+                    />
+                    <Route path="/assign-vehicle" element={<AssignVehicle />} />
+                    <Route path="/driver/vehicle" element={<DriverVehicle />} />
+                    <Route
+                      path="/driver/schedule"
+                      element={<DriverSchedule />}
+                    />
                   </Routes>
                 </div>
               </div>
