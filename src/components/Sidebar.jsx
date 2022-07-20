@@ -38,7 +38,7 @@ const Sidebar = () => {
               text-xl font-extrabold tracking-tight dark:text-white
               text-slate-900"
             >
-              <TbTruckDelivery /> <span>Fleetz</span>
+              <TbTruckDelivery /> <span>FleetDASH</span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
