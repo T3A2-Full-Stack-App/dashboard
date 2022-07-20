@@ -2,7 +2,7 @@ import React from "react";
 
 import { routeData } from "../data/route";
 
-const DriverSchedule = () => {
+const DriverRoute = () => {
   return (
     <div className="flex gap-10 flex-wrap justify-center">
       <div
@@ -39,4 +39,4 @@ const DriverSchedule = () => {
   );
 };
 
-export default DriverSchedule;
+export default DriverRoute;

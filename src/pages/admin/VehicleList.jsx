@@ -23,7 +23,7 @@ import { useStateContext } from "../../contexts/ContextProvider";
 
 const VehicleList = () => {
 
-  const [vehicleData, setVehicleData] = useState([])
+const [vehicleData, setVehicleData] = useState([])
 
 useEffect(() => {
   async function getVehicleData() {
@@ -58,12 +58,17 @@ useEffect(() => {
           services={[Page,  Search, Toolbar, Selection, Edit, Sort, Filter]}
         />
       </GridComponent>
-      <div className="flex justify-center">
-        <Link to="/assign-vehicle">
-          <button class="mt-2 h-8 px-4 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
+      <div className="flex justify-end pt-5">
+        <Link to="/vehicle/new">
+          <button class="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
             New Vehicle
           </button>
-        </Link>
+          </Link>
+          <Link to="/vehicle/edit">
+          <button class="mt-2 h-8 px-4 mx-1 text-sm bg-orange-300 hover:bg-orange-400 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
+            Edit Vehicles
+          </button>
+          </Link>
       </div>
       </div>
       </>

@@ -18,9 +18,10 @@ import {
   DriverVehicle,
   VehicleList,
   AssignVehicle,
+  EditVehicle
 } from "./pages";
 
-import DriverSchedule from "./pages/DriverSchedule";
+import DriverRoute from "./pages/DriverRoute";
 
 import { useStateContext } from "./contexts/ContextProvider";
 
@@ -113,8 +114,9 @@ const App = () => {
                 </div>
               )}
               <div
-                className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${activeMenu ? "md:ml-72" : "flex-2"
-                  }`}
+                className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${
+                  activeMenu ? "md:ml-72" : "flex-2"
+                }`}
               >
                 <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
                   <Navbar />
@@ -126,8 +128,10 @@ const App = () => {
                     <Route path="/drivers" element={<Drivers />} />
                     <Route path="/vehicles" element={<VehicleList />} />
                     <Route path="/calendar" element={<Calendar />} />
-                    <Route path="/assign-vehicle" element={<AssignVehicle />} />
+                    <Route path="/vehicle/new" element={<AssignVehicle />} />
+                    <Route path="/vehicle/edit" element={<EditVehicle />} />
                     <Route path="/driver/vehicle" element={<DriverVehicle />} />
+
                     <Route path="*" element={<Runs />} />
                   </Routes>
                 </div>
@@ -136,7 +140,7 @@ const App = () => {
           </UserContext.Provider>
         </BrowserRouter>
       </div>
-    );
+    )
 
   } else if (userData.user.role === 'driver') {
     return (
@@ -182,7 +186,7 @@ const App = () => {
                   <Routes>
                     <Route path="/calendar" element={<Calendar />} />
                     <Route path="/driver/vehicle" element={<DriverVehicle />}/>
-                    <Route path="/driver/schedule" element={<DriverSchedule />}/>
+                    <Route path="/driver/route" element={<DriverRoute />}/>
                     <Route path="/driver/vehicle" element={<DriverVehicle />} />
                     <Route path="*" element={<DriverVehicle />} />
                   </Routes>
