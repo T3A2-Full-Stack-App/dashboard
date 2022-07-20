@@ -1,34 +1,50 @@
 import React from "react";
 import {
-  ScheduleComponent,
-  Day,
-  Week,
-  WorkWeek,
-  Month,
-  Agenda,
+  GridComponent,
+  ColumnsDirective,
+  ColumnDirective,
+  Page,
+  Search,
   Inject,
-  Resize,
-  DragAndDrop,
-} from "@syncfusion/ej2-react-schedule";
+  Toolbar,
+  Selection,
+  Edit,
+  Sort,
+  Filter,
+} from "@syncfusion/ej2-react-grids";
 
-import { scheduleData } from "../data/runsData";
+import { runsData, runsGrid } from "../data/runsData";
 import { Header } from "../components";
 
 const Runs = () => {
   return (
-    <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category="App" title="Plan Runs" />
-      <ScheduleComponent
-        height="650px"
-        eventSettings={{ dataSource: scheduleData }}
-        selectedDate={new Date(2021, 0, 10)}
+    <div className="container mx-auto m-2 md:m-5 mt-24 p-2 md:p-10 bg-white rounded-2xl">
+      <Header title="Plan Runs" />
+      <GridComponent
+        id="gridcomp"
+        dataSource={runsData}
+        allowPaging
+        allowSorting
+        toolbar={["Search", "Add", "Edit", "Delete", "Update", "Cancel"]}
+        editSettings={{
+          allowAdding: true,
+          allowDeleting: true,
+          allowEditing: true,
+        }}
+        mode="EditMode.Normal"
+        width="auto"
+        allowTextWrap={true}
       >
+        <ColumnsDirective>
+          {runsGrid.map((item, index) => (
+            <ColumnDirective key={index} {...item} />
+          ))}
+        </ColumnsDirective>
         <Inject
-          services={[Day, Week, WorkWeek, Month, Agenda, Resize, DragAndDrop]}
+          services={[Page, Search, Toolbar, Selection, Edit, Sort, Filter]}
         />
-      </ScheduleComponent>
+      </GridComponent>
     </div>
   );
 };
-
 export default Runs;
