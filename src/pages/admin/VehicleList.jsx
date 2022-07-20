@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   GridComponent,
@@ -13,18 +13,34 @@ import {
   Sort,
   Filter,
 } from "@syncfusion/ej2-react-grids";
-
-import { vehicleData, vehicleGrid } from "../../data/adminlist";
+import { DataManager } from '@syncfusion/ej2-data';
+import { vehicleGrid } from "../../data/vehiclelist";
 import { Header } from "../../components";
+import UserContext from "../../contexts/userContext";
+import { useStateContext } from "../../contexts/ContextProvider";
+
+
 
 const VehicleList = () => {
-  return (
-    <div className="container mx-auto m-2 md:m-5 mt-24 p-2 md:p-10 bg-white rounded-2xl">
-      <Header title="Vehicle List" />
 
+  const [vehicleData, setVehicleData] = useState([])
+
+useEffect(() => {
+  async function getVehicleData() {
+    const res = await fetch('http://localhost:3405/api/v1/vehicles')
+    setVehicleData(await res.json())
+  }
+  getVehicleData()
+}, [])
+  
+  return (
+    <>
+    <div className="container mx-auto m-2 md:m-5 mt-24 p-2 md:p-10 bg-white rounded-2xl">
+      <Header title="Vehicles" />
       <GridComponent
         id="gridcomp"
         dataSource={vehicleData}
+        allowFiltering
         allowPaging
         allowSorting
         toolbar={["Search"]}
@@ -39,17 +55,18 @@ const VehicleList = () => {
         </ColumnsDirective>
 
         <Inject
-          services={[Page, Search, Toolbar, Selection, Edit, Sort, Filter]}
+          services={[Page,  Search, Toolbar, Selection, Edit, Sort, Filter]}
         />
       </GridComponent>
       <div className="flex justify-center">
         <Link to="/assign-vehicle">
           <button class="mt-2 h-8 px-4 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
-            Assign Driver Vehicle
+            New Vehicle
           </button>
         </Link>
       </div>
-    </div>
+      </div>
+      </>
   );
 };
 export default VehicleList;

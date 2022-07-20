@@ -68,6 +68,8 @@ const Drivers = () => {
   }, [])
 
 
+
+
   const editing = { allowDeleting: true, allowEditing: true };
   return (
     <>
@@ -75,7 +77,8 @@ const Drivers = () => {
       <Header title="Drivers" />
       <GridComponent
         id="gridcomp"
-        dataSource={driverData}
+          dataSource={driverData}
+        allowFiltering
         allowPaging
         allowSorting
         toolbar={["Search"]}

@@ -126,7 +126,6 @@ const App = () => {
                     <Route path="/drivers" element={<Drivers />} />
                     <Route path="/vehicles" element={<VehicleList />} />
                     <Route path="/calendar" element={<Calendar />} />
-                    <Route path="/drivers/vehicle" element={<DriverVehicle />} />
                     <Route path="/assign-vehicle" element={<AssignVehicle />} />
                     <Route path="/driver/vehicle" element={<DriverVehicle />} />
                     <Route path="*" element={<Runs />} />
