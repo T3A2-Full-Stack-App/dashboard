@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function AssignVehicle() {
-  const [user, setUser] = useState("");
+  // const [firstName, setFirstname] = useState("");
+  // const [lastName, setLastname] = useState("");
+    const [user, setUser] = useState("");
   const [make, setMake] = useState("");
   const [model, setModel] = useState("");
   const [year, setYear] = useState("");
@@ -11,7 +13,15 @@ function AssignVehicle() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
+    // setFirstname("");
+    // setLastname("");
+    setMake("");
+    setModel("");
+    setYear("");
+    setRegistration("");
+    setNextService("");
+    // console.log(firstName);
+    // console.log(lastName);
     console.log(make);
     console.log(model);
     console.log(year);
@@ -19,29 +29,30 @@ function AssignVehicle() {
     console.log(nextService);
 
     // code send to database
-    // fetch("URL", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    // user,
-    // make,
-    // model,
-    // year,
-    // registration,
-    // nextService,
-    //   })
-    //     .then(response => response.json())
-    //     .then(json => console.log(json))
-    // })
+    fetch("api/v1/vehicles", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // firstName,
+        // lastName,
+        user,
+        make,
+        model,
+        year,
+        registration,
+        nextService,
+      })
+        .then((response) => response.json())
+    });
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="mr-5 flex gap-10 flex-wrap justify-center">
       <form
-        onSubmit={handleSubmit}
-        className="mt-16 bg-white-400 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className="bg-white dark:text-gray-200
+              dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780"
       >
         <div className="flex justify-center">
           <h2 className="mt-2 text-center text-3xl font-extrabold text-gray-900">
@@ -54,14 +65,38 @@ function AssignVehicle() {
         >
           Back to Vehicle Lists
         </Link>
-        <div className="mt-3 mb-4 -space-y-px">
+        {/* <div className="mt-3 mb-4 -space-y-px">
           <label className="block text-gray-700 text-sm font-bold mb-2">
-            Driver:
+            First Name:
           </label>
           <input
             required
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Driver Name"
+            placeholder="FirstName"
+            value={firstName}
+            onChange={(e) => setFirstname(e.target.value)}
+          />
+        </div>
+        <div className="mt-3 mb-4 -space-y-px">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            Last Name:
+          </label>
+          <input
+            required
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={(e) => setLastname(e.target.value)}
+          />
+        </div> */}
+        <div className="mt-3 mb-4 -space-y-px">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            Driver Name:
+          </label>
+          <input
+            required
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Name"
             value={user}
             onChange={(e) => setUser(e.target.value)}
           />
@@ -126,7 +161,11 @@ function AssignVehicle() {
             onChange={(e) => setNextService(e.target.value)}
           />
         </div>
-        <button class="h-8 px-4 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
+        <button
+          onClick={handleSubmit}
+          type="submit"
+          class="h-8 px-4 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline"
+        >
           Assign
         </button>
       </form>
