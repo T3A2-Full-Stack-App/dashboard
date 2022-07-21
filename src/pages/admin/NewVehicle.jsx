@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Header } from "../../components";
 
-function AssignVehicle() {
+function NewVehicle() {
 
   const navigate = useNavigate();
 
@@ -179,4 +179,4 @@ function AssignVehicle() {
   );
 }
 
-export default AssignVehicle;
+export default NewVehicle;

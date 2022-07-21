@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { useStateContext } from "../contexts/ContextProvider";
 import UserContext from '../contexts/userContext';

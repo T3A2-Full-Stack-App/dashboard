@@ -65,7 +65,7 @@ useEffect(() => {
           </button>
           </Link>
           <Link to="/vehicle/edit">
-          <button class="mt-2 h-8 px-4 mx-1 text-sm bg-orange-300 hover:bg-orange-400 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
+          <button class="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
             Edit Vehicles
           </button>
           </Link>

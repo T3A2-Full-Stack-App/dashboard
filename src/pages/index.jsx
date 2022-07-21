@@ -6,6 +6,7 @@ export { default as Calendar } from "./Calendar";
 export { default as DriverVehicle } from "./DriverVehicle";
 export { default as DriverSchedule } from "./DriverRoute";
 export { default as EditVehicle } from "./EditVehicle";
+export { default as EditDriver } from "./EditDriver";
 export { default as VehicleList } from "./admin/VehicleList";
-export { default as AssignVehicle } from "./admin/AssignVehicle";
+export { default as NewVehicle } from "./admin/NewVehicle";
 
