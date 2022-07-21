@@ -169,7 +169,7 @@ function NewVehicle() {
           </button>
           <Link
             to="/vehicles"
-            className="flex justify-center font-medium mt-8 text-teal-500 hover:text-teal-200 "
+            className="flex justify-center font-medium mt-8 text-blue-500 hover:text-blue-700 "
           >
             Back to Vehicle Lists
           </Link>
