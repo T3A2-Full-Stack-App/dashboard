@@ -22,6 +22,7 @@ import {
   EditDriver,
   NewRuns,
   EditRuns,
+  AssignDriver
 } from "./pages";
 
 import DriverRoute from "./pages/DriverRoute";
@@ -133,7 +134,7 @@ const App = () => {
                     <Route path="/calendar" element={<Calendar />} />
                     <Route path="/vehicle/new" element={<NewVehicle />} />
                     <Route path="/vehicle/edit" element={<EditVehicle />} />
-                    <Route path="/driver/edit" element={<EditDriver />} />
+                    <Route path="/vehicle/assign" element={<AssignDriver />} />
                     <Route path="/driver/vehicle" element={<DriverVehicle />} />
                     <Route path="*" element={<Runs />} />
                   </Routes>

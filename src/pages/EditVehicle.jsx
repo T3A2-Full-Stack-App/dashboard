@@ -11,7 +11,6 @@ const EditVehicle = () => {
         async function getVehicle(registration) {
             const res = await fetch(`http://localhost:3405/api/v1/vehicles/${registration}`)
             setVehicleData(await res.json())
-            console.log(vehicleData)
         }
     
     const navigate = useNavigate();
@@ -95,7 +94,7 @@ const EditVehicle = () => {
                         </div>
 
                         <label className="tracking-wide text-base font-bold">
-                            Select Vehicle by Registration:
+                            Select vehicle by registration:
                             <select
                                 required
                                 className="appearance-none font-normal block w-52 bg-gray-200 text-gray-700 border border-gray-300 rounded py-2 px-3 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -214,7 +213,7 @@ const EditVehicle = () => {
                         </form>
                         <Link
                             to="/vehicles"
-                            className="flex justify-center font-medium file:mt-8 text-teal-500 hover:text-teal-200 "
+                            className="flex justify-center font-medium file:mt-8 text-blue-500 hover:text-blue-700 "
                         >
                             Back to Vehicle Lists
                         </Link>

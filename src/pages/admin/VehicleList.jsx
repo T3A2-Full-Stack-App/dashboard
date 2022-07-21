@@ -14,12 +14,66 @@ import {
   Filter,
 } from "@syncfusion/ej2-react-grids";
 import { DataManager } from '@syncfusion/ej2-data';
-import { vehicleGrid } from "../../data/vehiclelist";
 import { Header } from "../../components";
 import UserContext from "../../contexts/userContext";
 import { useStateContext } from "../../contexts/ContextProvider";
 
-
+const vehicleGrid = [
+  {
+    field: "registration",
+    headerText: "Registration",
+    width: "130",
+    textAlign: "Left",
+  },
+  {
+    field: "driverEmail",
+    headerText: "Driver",
+    width: "150",
+    textAlign: "Left",
+  },
+  {
+    field: "make",
+    headerText: "Make",
+    width: "90",
+    textAlign: "Left",
+  },
+  {
+    field: "model",
+    headerText: "Model",
+    width: "90",
+    textAlign: "Left",
+  },
+  {
+    field: "year",
+    headerText: "Year",
+    width: "80",
+    textAlign: "Left",
+  },
+  {
+    field: "kilometers",
+    headerText: "Kilometers",
+    width: "80",
+    textAlign: "Left",
+  },
+  {
+    field: "nextService",
+    headerText: "Next Service",
+    width: "80",
+    textAlign: "Left",
+  },
+  {
+    field:  "kmRemaining",
+    headerText: "Kilometers Until Service",
+    width: "80",
+    textAlign: "Left",
+  },
+  {
+    field: "condition",
+    headerText: "Condition Report",
+    width: "170",
+    textAlign: "Left",
+  },
+];
 
 const VehicleList = () => {
 
@@ -66,10 +120,16 @@ useEffect(() => {
           </Link>
           <Link to="/vehicle/edit">
           <button class="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
-            Edit Vehicles
+            Edit Vehicle
           </button>
           </Link>
-      </div>
+                  <Link to="/vehicle/assign">
+          <button class="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
+            Assign Vehicle to Driver
+          </button>
+          </Link>
+        </div>
+        
       </div>
       </>
   );
