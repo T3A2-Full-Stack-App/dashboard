@@ -129,7 +129,6 @@ const App = () => {
                     <Route path="/vehicle/new" element={<AssignVehicle />} />
                     <Route path="/vehicle/edit" element={<EditVehicle />} />
                     <Route path="/driver/vehicle" element={<DriverVehicle />} />
-
                     <Route path="*" element={<Runs />} />
                   </Routes>
                 </div>
