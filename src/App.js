@@ -18,7 +18,7 @@ import {
   DriverVehicle,
   VehicleList,
   AssignVehicle,
-  EditVehicle
+  EditVehicle,
 } from "./pages";
 
 import DriverRoute from "./pages/DriverRoute";
@@ -66,7 +66,6 @@ const App = () => {
     checkLoggedIn();
   }, []);
 
-
   if (!userData.user) {
     return (
       <BrowserRouter>
@@ -80,7 +79,6 @@ const App = () => {
         </UserContext.Provider>
       </BrowserRouter>
     );
-
   } else if (userData.user.role === "admin") {
     return (
       <div className={currentMode === "Dark" ? "dark" : ""}>
@@ -140,9 +138,8 @@ const App = () => {
           </UserContext.Provider>
         </BrowserRouter>
       </div>
-    )
-
-  } else if (userData.user.role === 'driver') {
+    );
+  } else if (userData.user.role === "driver") {
     return (
       <div className={currentMode === "Dark" ? "dark" : ""}>
         <BrowserRouter>
@@ -175,8 +172,9 @@ const App = () => {
                 </div>
               )}
               <div
-                className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${activeMenu ? "md:ml-72" : "flex-2"
-                  }`}
+                className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${
+                  activeMenu ? "md:ml-72" : "flex-2"
+                }`}
               >
                 <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
                   <Navbar />
@@ -185,8 +183,8 @@ const App = () => {
                   {themeSettings && <ThemeSettings />}
                   <Routes>
                     <Route path="/calendar" element={<Calendar />} />
-                    <Route path="/driver/vehicle" element={<DriverVehicle />}/>
-                    <Route path="/driver/route" element={<DriverRoute />}/>
+                    <Route path="/driver/vehicle" element={<DriverVehicle />} />
+                    <Route path="/driver/route" element={<DriverRoute />} />
                     <Route path="/driver/vehicle" element={<DriverVehicle />} />
                     <Route path="*" element={<DriverVehicle />} />
                   </Routes>
