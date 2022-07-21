@@ -1,11 +1,5 @@
 export const runsGrid = [
   {
-    field: "driver",
-    headerText: "Driver",
-    width: "130",
-    textAlign: "Left",
-  },
-  {
     field: "name",
     headerText: "Route",
     width: "130",
