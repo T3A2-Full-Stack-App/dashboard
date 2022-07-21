@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Header } from "../../components";
 
 function AssignVehicle() {
+
+  const navigate = useNavigate();
 
   const [data, setData] = useState({
     firstName: "",
@@ -50,6 +53,7 @@ function AssignVehicle() {
       .post("http://localhost:3405/api/v1/vehicles", driverData)
       .then((response) => {
         console.log(response);
+        navigate("/vehicles");
       })
       .catch((error) => {
         if (error.response) {
@@ -66,22 +70,19 @@ function AssignVehicle() {
   return (
     <div className="mr-5 flex gap-10 flex-wrap justify-center">
       <div className="flex justify-center">
+        
         <form
           onSubmit={handleSubmit}
           className="bg-white dark:text-gray-200
               dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780"
         >
-          <div className="flex justify-center">
-            <h2 className="mt-2 text-center text-3xl font-extrabold text-gray-900">
-              New Vehicle
-            </h2>
-          </div>
-
+            <Header title="New Vehicle" />
           <div className="mt-3 mb-4 -space-y-px">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Make:
             </label>
             <input
+              required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Car Make"
               type="String"
@@ -95,6 +96,7 @@ function AssignVehicle() {
               Model:
             </label>
             <input
+              required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Car Model"
               type="String"
@@ -108,6 +110,7 @@ function AssignVehicle() {
               Year:
             </label>
             <input
+              required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Model Year"
               type="Number"
@@ -121,6 +124,7 @@ function AssignVehicle() {
               Registration:
             </label>
             <input
+              required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Car Registration"
               type="String"
@@ -134,6 +138,7 @@ function AssignVehicle() {
               Kilometers:
             </label>
             <input
+              required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Enter Kilometers"
               type="Number"
@@ -147,6 +152,7 @@ function AssignVehicle() {
               Next Service:
             </label>
             <input
+              required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Enter Kilometers"
               type="Number"

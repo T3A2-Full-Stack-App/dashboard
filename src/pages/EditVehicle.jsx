@@ -1,16 +1,8 @@
-import { columnsPrepared } from "@syncfusion/ej2-react-grids";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { render } from 'react-dom';
-import FlashMessage from 'react-flash-message'
-import ErrorNotice from "../components/misc/ErrorNotice";
+import { Header } from "../components";
 
-const updateSuccess = () => (
-    <FlashMessage duration={5000}>
-        <strong>Vehicle has been successfully updated</strong>
-    </FlashMessage>
-)
 
 const EditVehicle = () => {
 
@@ -23,7 +15,6 @@ const EditVehicle = () => {
         }
     
     const navigate = useNavigate();
-    const [error, setError] = useState();
     const [registration, setRegistration] = useState(vehicleData.registration)
     const [make, setMake] = useState(vehicleData.make)
     const [model, setModel] = useState(vehicleData.model)
@@ -40,10 +31,6 @@ const EditVehicle = () => {
         }
         getVehiclesData()
     }, [])
-
-
-    const [data, setData] = useState({
-    });
 
 
     const submit = async (e) => {
@@ -93,15 +80,17 @@ const EditVehicle = () => {
 
         return (
             <>
+                
                 <div className="flex gap-10 flex-wrap justify-center">
+                    
                     <div
                         className="bg-white dark:text-gray-200
               dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780"
                     >
+                        <Header title="Edit Vehicle" />
                         <div className="flex justify-between">
                             <p className="font-semibold text-3xl"></p>
                             <div className="flex flex-wrap items-center gap-4">
-                                <div className="mt-10 "></div>
                             </div>
                         </div>
 
@@ -208,18 +197,21 @@ const EditVehicle = () => {
 
                                 ></textarea>
                             </label>
-                            <button class="h-8 px-4 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline"
+                            <div classname="width-auto">
+                            <button className="static h-8 px-6 ml-64 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline"
                                 type="submit"
                             >
                                 Save
                             </button>
-                        </form>
-                        <button
-                                className="relative left-2 h-8 px-4 ml-2 text-sm bg-red-400 hover:bg-red-500 text-white transition-colors duration-15 rounded-lg focus:shadow-outline"
+
+                            <button
+                                className="h-8 ml-16 mb-4 px-4 text-sm bg-red-400 hover:bg-red-500 text-white transition-colors duration-15 rounded-lg focus:shadow-outline"
                                 onClick={(e) => deleteVehicle(vehicleData._id, e)}
                             >
                                 Delete
-                            </button>
+                                </button>
+                                </div>
+                        </form>
                         <Link
                             to="/vehicles"
                             className="flex justify-center font-medium file:mt-8 text-teal-500 hover:text-teal-200 "
