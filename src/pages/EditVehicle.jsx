@@ -19,6 +19,7 @@ const EditVehicle = () => {
         async function getVehicle(registration) {
             const res = await fetch(`http://localhost:3405/api/v1/vehicles/${registration}`)
             setVehicleData(await res.json())
+            console.log(vehicleData)
         }
     
     const navigate = useNavigate();
@@ -33,11 +34,6 @@ const EditVehicle = () => {
 
     const [vehiclesData, setVehiclesData] = useState([])
     useEffect(() => {
-
-
-
-
-
         async function getVehiclesData() {
             const res = await fetch('http://localhost:3405/api/v1/vehicles')
             setVehiclesData(await res.json())
@@ -53,8 +49,6 @@ const EditVehicle = () => {
     const submit = async (e) => {
         e.preventDefault();
         const editedVehicle = { registration, make, model, year, kilometers, nextService, condition };
-
-
         axios.put(
             `http://localhost:3405/api/v1/vehicles/${registration}`,
             editedVehicle
@@ -74,7 +68,25 @@ const EditVehicle = () => {
                 }
             });
     }
-        
+
+    const deleteVehicle = (vehicleId, e) => {
+        e.preventDefault()
+        axios.delete(
+            `http://localhost:3405/api/v1/vehicles/${vehicleId}`
+        ).then((response) => {
+            navigate("/vehicles");
+        })
+            .catch((error) => {
+                if (error.response) {
+                    console.log(error.response);
+                    console.log("server responded");
+                } else if (error.request) {
+                    console.log("network error");
+                } else {
+                    console.log(error);
+                }
+            });
+    }
 
     
 
@@ -137,7 +149,7 @@ const EditVehicle = () => {
                                 <label className="tracking-wide font-normal text-base">
                                     Model:
                                     <input
-                                        required
+                                        // required
                                         class="appearance-none block w-52 bg-gray-200 text-gray-700 border border-gray-300 rounded py-2 px-3 mb-3 leading-tight focus:outline-none focus:bg-white"
                                         name="model"
                                         type="String"
@@ -173,7 +185,7 @@ const EditVehicle = () => {
                                 <label className="tracking-wide font-normal text-base">
                                     Next Service:
                                     <input
-                                        required
+                                        // required
                                         class="appearance-none block w-52 bg-gray-200 text-gray-700 border border-gray-300 rounded py-2 px-3 mb-3 leading-tight focus:outline-none focus:bg-white"
                                         name="nextService"
                                         type="number"
@@ -201,14 +213,13 @@ const EditVehicle = () => {
                             >
                                 Save
                             </button>
-                            <button
+                        </form>
+                        <button
                                 className="relative left-2 h-8 px-4 ml-2 text-sm bg-red-400 hover:bg-red-500 text-white transition-colors duration-15 rounded-lg focus:shadow-outline"
-                                type='delete'
-                                onclick={'delete'}
+                                onClick={(e) => deleteVehicle(vehicleData._id, e)}
                             >
                                 Delete
                             </button>
-                        </form>
                         <Link
                             to="/vehicles"
                             className="flex justify-center font-medium file:mt-8 text-teal-500 hover:text-teal-200 "

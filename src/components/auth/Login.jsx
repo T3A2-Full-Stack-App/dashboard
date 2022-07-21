@@ -110,7 +110,7 @@ function Login() {
         <button
           className="mt-8 bg-blue-700 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit"
-          onClick={"submit"}
+          onClick={submit}
           value="Login"
         >
           Log in
