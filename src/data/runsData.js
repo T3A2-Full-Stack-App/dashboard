@@ -17,12 +17,6 @@ export const runsGrid = [
     width: "130",
     textAlign: "Left",
   },
-  {
-    field: "comments",
-    headerText: "Comments",
-    width: "280",
-    textAlign: "Center",
-  },
 ];
 
 // export const runsData = [

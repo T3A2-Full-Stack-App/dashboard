@@ -19,7 +19,9 @@ import {
   VehicleList,
   NewVehicle,
   EditVehicle,
-  EditDriver
+  EditDriver,
+  NewRuns,
+  EditRuns,
 } from "./pages";
 
 import DriverRoute from "./pages/DriverRoute";
@@ -124,6 +126,8 @@ const App = () => {
                   {themeSettings && <ThemeSettings />}
                   <Routes>
                     <Route path="/runs" element={<Runs />} />
+                    <Route path="/runs/new" element={<NewRuns />} />
+                    <Route path="/runs/edit" element={<EditRuns />} />
                     <Route path="/drivers" element={<Drivers />} />
                     <Route path="/vehicles" element={<VehicleList />} />
                     <Route path="/calendar" element={<Calendar />} />
@@ -139,7 +143,7 @@ const App = () => {
           </UserContext.Provider>
         </BrowserRouter>
       </div>
-    )
+    );
   } else if (userData.user.role === "driver") {
     return (
       <div className={currentMode === "Dark" ? "dark" : ""}>
