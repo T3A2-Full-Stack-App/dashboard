@@ -3,14 +3,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 function AssignVehicle() {
-  // const [firstName, setFirstname] = useState("");
-  // const [lastName, setLastname] = useState("");
-  // const [user, setUser] = useState("");
-  // const [make, setMake] = useState("");
-  // const [model, setModel] = useState("");
-  // const [year, setYear] = useState("");
-  // const [registration, setRegistration] = useState("");
-  // const [nextService, setNextService] = useState("");
 
   const [data, setData] = useState({
     firstName: "",
@@ -167,7 +159,7 @@ function AssignVehicle() {
             type="submit"
             class="h-8 px-4 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline"
           >
-            Assign
+            Submit
           </button>
           <Link
             to="/vehicles"
