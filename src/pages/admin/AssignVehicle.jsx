@@ -66,6 +66,7 @@ function AssignVehicle() {
 
   return (
     <div className="mr-5 flex gap-10 flex-wrap justify-center">
+    <div className="flex justify-center">
       <form
         onSubmit={handleSubmit}
         className="bg-white dark:text-gray-200
@@ -76,12 +77,7 @@ function AssignVehicle() {
             New Vehicle
           </h2>
         </div>
-        <Link
-          to="/vehicles"
-          className="font-medium text-teal-500 hover:text-teal-200 "
-        >
-          Back to Vehicle Lists
-        </Link>
+        
         <div className="mt-3 mb-4 -space-y-px">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             Make:
@@ -166,7 +162,14 @@ function AssignVehicle() {
         >
           Assign
         </button>
+        <Link
+          to="/vehicles"
+          className="flex justify-center font-medium mt-8 text-teal-500 hover:text-teal-200 "
+        >
+          Back to Vehicle Lists
+        </Link>
       </form>
+    </div>
     </div>
   );
 }
