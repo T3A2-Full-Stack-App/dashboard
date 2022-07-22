@@ -28,7 +28,7 @@ const vehicleGrid = [
   {
     field: "driverEmail",
     headerText: "Driver",
-    width: "150",
+    width: "200",
     textAlign: "Left",
   },
   {
