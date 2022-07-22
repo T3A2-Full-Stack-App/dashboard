@@ -6,9 +6,7 @@ import { Header } from "../components";
 
 const AssignRun = () => {
     const navigate = useNavigate();
-    const [name, setName] = useState();
-    const [area, setArea] = useState();
-    const [driverEmail, setDriverEmail] = useState();
+    const [setName] = useState();
 
     const [runsData, setRunsData] = useState([]);
     useEffect(() => {

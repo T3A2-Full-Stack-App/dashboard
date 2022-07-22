@@ -6,7 +6,7 @@ class Logout extends Component {
     return (
       <header className="header">
         <Link to="/">
-          <h1 className="title"></h1>
+          {/* <h1 className="title">Head</h1> */}
         </Link>
         <AuthOptions />
       </header>
