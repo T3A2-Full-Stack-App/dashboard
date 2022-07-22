@@ -68,7 +68,7 @@ const Drivers = () => {
 
   useEffect(() => {
     async function getDriverData() {
-      const res = await fetch('http://localhost:3405/api/v1/drivers')
+      const res = await fetch('https://fleetwizzard.herokuapp.com/api/v1/drivers')
       setDriverData(await res.json())
     }
     getDriverData()

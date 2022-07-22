@@ -18,7 +18,7 @@ function Login() {
     try {
       const loginUser = { email, password, role };
       const loginResponse = await axios.post(
-        "http://localhost:3405/api/v1/users/login",
+        "https://fleetwizzard.herokuapp.com/api/v1/users/login",
         loginUser
       );
       setUserData({

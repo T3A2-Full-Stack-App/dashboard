@@ -12,7 +12,7 @@ const DriverVehicle = () => {
 
   useEffect(() => {
     async function getThisDriver(driverEmail) {
-      const res = await fetch(`http://localhost:3405/api/v1/drivers/get/${driverEmail}/find`)
+      const res = await fetch(`https://fleetwizzard.herokuapp.com/api/v1/drivers/get/${driverEmail}/find`)
       setThisDriverData(await res.json())
     }
     getThisDriver(userData.user.email)
@@ -20,7 +20,7 @@ const DriverVehicle = () => {
 
 
   async function getVehicle(registration) {
-    const res = await fetch(`http://localhost:3405/api/v1/vehicles/${registration}`)
+    const res = await fetch(`https://fleetwizzard.herokuapp.com/api/v1/vehicles/${registration}`)
     setVehicleData(await res.json())
   }
   getVehicle(thisDriverData.vehicleRegistration)
@@ -30,7 +30,7 @@ const DriverVehicle = () => {
     e.preventDefault();
     console.log(newKilometers)
     axios.put(
-      `http://localhost:3405/api/v1/vehicles/driver/${vehicleData.registration}`,
+      `https://fleetwizzard.herokuapp.com/api/v1/vehicles/driver/${vehicleData.registration}`,
       {
         kilometers: newKilometers,
         nextService: vehicleData.nextService
@@ -54,7 +54,7 @@ const DriverVehicle = () => {
     e.preventDefault();
     console.log(newCondition)
     axios.put(
-      `http://localhost:3405/api/v1/vehicles/condition/${vehicleData.registration}`,
+      `https://fleetwizzard.herokuapp.com/api/v1/vehicles/condition/${vehicleData.registration}`,
       {
         condition: newCondition,
       }

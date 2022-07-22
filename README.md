@@ -31,7 +31,7 @@ The functionality and features of the application are dependent on the level of 
     -   Express.js
     -   React.js
     -   Node.js
-- Syncfusion - Components
+- Syncfusion - Components/Frameworks
 - Tailwind - CSS Framework
 - Heroku - Deployment
 
@@ -54,7 +54,7 @@ In order to test this application please use the logins provided below for each 
 
 [Click Here For Testing Table on Google Drive](https://docs.google.com/spreadsheets/d/10bOoYQT4HXajCUm3AfPUTGJvFdl1Tl3bzU4K1GOKsBI/edit#gid=0).
 
-<img src="src/docs/images/FleetDASH-Testing.png" alt="Mobile-Admin-Calendar" title="Mobile-Admin-Calendar" width=/>
+<img src="src/docs/images/FleetDASH-Testing.png" alt="FleetDASH-Testing" title="FleetDASH-Testing" width=/>
 
 ### User Stories:
 
@@ -130,3 +130,19 @@ In order to test this application please use the logins provided below for each 
 <img src="src/docs/images/10.png" alt="Trello-Screenshot" title="Trello-Screenshot" width=/>
 <img src="src/docs/images/11.png" alt="Trello-Screenshot" title="Trello-Screenshot" width=/>
 <img src="src/docs/images/12.png" alt="Trello-Screenshot" title="Trello-Screenshot" width=/>
+
+### Application ScreenShots:
+
+<img src="src/docs/images/login.png" alt="login" title="" width=/>
+<img src="src/docs/images/runs.png" alt="runs" title="" width=/>
+<img src="src/docs/images/new-run.png" alt="new-run" title="" width=/>
+<img src="src/docs/images/edit-runs.png" alt="edit-runs" title="" width=/>
+<img src="src/docs/images/assign-driver.png" alt="assign-driver" title="" width=/>
+<img src="src/docs/images/driver.png" alt="driver" title="" width=/>
+<img src="src/docs/images/assign-vehicle.png" alt="assign-vehicle" title="" width=/>
+<img src="src/docs/images/vehicles.png" alt="vehicles" title="" width=/>
+<img src="src/docs/images/new-vehicle.png" alt="new-vehicle" title="" width=/>
+<img src="src/docs/images/edit-vehicle.png" alt="edit-vehicle" title="" width=/>
+<img src="src/docs/images/calendar.png" alt="calendar" title="" width=/>
+<img src="src/docs/images/my-vehicle.png" alt="my-vehicle" title="" width=/>
+<img src="src/docs/images/my-run.png" alt="my-run" title="" width=/>

@@ -11,7 +11,7 @@ const DriverRoute = () => {
 
   useEffect(() => {
     async function getRun(driverEmail) {
-      const res = await fetch(`http://localhost:3405/api/v1/runs/driver/${driverEmail}/find`)
+      const res = await fetch(`https://fleetwizzard.herokuapp.com/api/v1/runs/driver/${driverEmail}/find`)
       setRunData(await res.json())
     }
     getRun(userData.user.email)

@@ -10,7 +10,7 @@ const AssignDriver = () => {
   const [driverData, setDriverData] = useState([])
   useEffect(() => {
     async function getDriverData() {
-      const res = await fetch('http://localhost:3405/api/v1/drivers')
+      const res = await fetch('https://fleetwizzard.herokuapp.com/api/v1/drivers')
       setDriverData(await res.json())
     }
     getDriverData()
@@ -18,7 +18,7 @@ const AssignDriver = () => {
 
   const [thisDriverData, setThisDriverData] = useState([])
   async function getThisDriver(driverEmail) {
-    const res = await fetch(`http://localhost:3405/api/v1/drivers/get/${driverEmail}/find`)
+    const res = await fetch(`https://fleetwizzard.herokuapp.com/api/v1/drivers/get/${driverEmail}/find`)
     setThisDriverData(await res.json())
     console.log(thisDriverData)
   }
@@ -26,7 +26,7 @@ const AssignDriver = () => {
   const [vehicleData, setVehicleData] = useState([])
   useEffect(() => {
     async function getVehicleData() {
-      const res = await fetch('http://localhost:3405/api/v1/vehicles')
+      const res = await fetch('https://fleetwizzard.herokuapp.com/api/v1/vehicles')
       setVehicleData(await res.json())
     }
     getVehicleData()
@@ -34,7 +34,7 @@ const AssignDriver = () => {
 
   const [thisVehicleData, setThisVehicleData] = useState([])
   async function getThisVehicle(registration) {
-    const res = await fetch(`http://localhost:3405/api/v1/vehicles/${registration}`)
+    const res = await fetch(`https://fleetwizzard.herokuapp.com/api/v1/vehicles/${registration}`)
     setThisVehicleData(await res.json())
     console.log(thisVehicleData)
   }
@@ -46,7 +46,7 @@ const AssignDriver = () => {
 
 
     // Put Request to update the driver info the vehicle model
-    axios.put(`http://localhost:3405/api/v1/vehicles/assigndriver/${vehicle.registration}`,
+    axios.put(`https://fleetwizzard.herokuapp.com/api/v1/vehicles/assigndriver/${vehicle.registration}`,
       driverEmail
     ).then((response) => {
       console.log(response)
@@ -54,7 +54,7 @@ const AssignDriver = () => {
     })
 
     // Put Request to update the vehicle info the driver model
-    axios.put(`http://localhost:3405/api/v1/drivers/${driver._id}`,
+    axios.put(`https://fleetwizzard.herokuapp.com/api/v1/drivers/${driver._id}`,
       vehicleReg
     ).then((response) => {
       console.log(response)

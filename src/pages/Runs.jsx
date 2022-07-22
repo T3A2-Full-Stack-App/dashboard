@@ -41,7 +41,7 @@ const Runs = () => {
 
   useEffect(() => {
     async function getRunsData() {
-      const res = await fetch("http://localhost:3405/api/v1/runs");
+      const res = await fetch("https://fleetwizzard.herokuapp.com/api/v1/runs");
       setRunsData(await res.json());
     }
     getRunsData();

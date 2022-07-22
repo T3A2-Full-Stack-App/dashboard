@@ -81,7 +81,7 @@ const [vehicleData, setVehicleData] = useState([])
 
 useEffect(() => {
   async function getVehicleData() {
-    const res = await fetch('http://localhost:3405/api/v1/vehicles')
+    const res = await fetch('https://fleetwizzard.herokuapp.com/api/v1/vehicles')
     setVehicleData(await res.json())
   }
   getVehicleData()

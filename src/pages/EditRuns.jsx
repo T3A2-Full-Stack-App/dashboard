@@ -11,7 +11,7 @@ const EditRuns = () => {
   const [runsData, setRunsData] = useState([]);
   useEffect(() => {
     async function getRunsData() {
-      const res = await fetch("http://localhost:3405/api/v1/runs");
+      const res = await fetch("https://fleetwizzard.herokuapp.com/api/v1/runs");
       setRunsData(await res.json());
     }
     getRunsData();
@@ -19,7 +19,7 @@ const EditRuns = () => {
 
   const [thisRunData, setThisRunData] = useState([]);
   async function getThisRun(area) {
-    const res = await fetch(`http://localhost:3405/api/v1/runs/${area}`);
+    const res = await fetch(`https://fleetwizzard.herokuapp.com/api/v1/runs/${area}`);
     setThisRunData(await res.json());
     console.log(thisRunData);
   }
@@ -33,7 +33,7 @@ const EditRuns = () => {
       area: newArea,
     };
     axios
-      .put(`http://localhost:3405/api/v1/runs/${runId}`, newRun)
+      .put(`https://fleetwizzard.herokuapp.com/api/v1/runs/${runId}`, newRun)
       .then((response) => {
         console.log(response);
         e.preventDefault();
@@ -55,7 +55,7 @@ const EditRuns = () => {
     e.preventDefault();
     console.log(runId)
     axios
-      .delete(`http://localhost:3405/api/v1/runs/${runId}`)
+      .delete(`https://fleetwizzard.herokuapp.com/api/v1/runs/${runId}`)
       .then((response) => {
         navigate("/runs");
       })
