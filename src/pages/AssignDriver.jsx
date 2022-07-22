@@ -73,11 +73,6 @@ const AssignDriver = () => {
               dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780"
                 >
                     <Header title="Assign Vehicle to Driver" />
-                    <div className="flex justify-between">
-                        <p className="font-semibold text-3xl"></p>
-                        <div className="flex flex-wrap items-center gap-4">
-                        </div>
-                    </div>
 
                     <label className="tracking-wide text-base font-bold">
                         Select driver by email:

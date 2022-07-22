@@ -21,20 +21,20 @@ const Runs = () => {
   {
     field: "name",
     headerText: "Route",
-    width: "100",
-    textAlign: "Center",
+    width: "90",
+    textAlign: "Left",
   },
   {
     field: "area",
     headerText: "Location",
-    width: "100",
-    textAlign: "Center",
+    width: "90",
+    textAlign: "Left",
   },
   {
     field: "driverEmail",
     headerText: "Driver",
-    width: "130",
-    textAlign: "Center",
+    width: "90",
+    textAlign: "Left",
   },
 ];
   const [runsData, setRunsData] = useState([]);
@@ -71,14 +71,19 @@ const Runs = () => {
           />
         </GridComponent>
         <div className="flex justify-end pt-5">
-          <Link to="/runs/new">
+            <Link to="/runs/new">
             <button className="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
-              New Runs
+              New Run
             </button>
           </Link>
           <Link to="/runs/edit">
             <button className="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
-              Edit Runs
+              Edit Run
+            </button>
+          </Link>
+          <Link to="/runs/assign">
+            <button className="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
+              Assign Driver to Run
             </button>
           </Link>
         </div>
