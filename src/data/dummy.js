@@ -1,4 +1,3 @@
-
 export const themeColors = [
   {
     name: "blue-theme",

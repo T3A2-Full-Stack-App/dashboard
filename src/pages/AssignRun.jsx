@@ -7,7 +7,6 @@ import { Header } from "../components";
 const AssignRun = () => {
     const navigate = useNavigate();
 
-
     const [runsData, setRunsData] = useState([]);
     useEffect(() => {
         async function getRunsData() {
