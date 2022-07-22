@@ -63,7 +63,7 @@ function NewRuns() {
           <Header title="New Runs" />
           <div className="mt-3 mb-4 -space-y-px">
             <label className="block text-gray-700 text-sm font-bold mb-2">
-              Route Name:
+            Run Name:
             </label>
             <input
               required
