@@ -16,7 +16,7 @@ const DriverVehicle = () => {
       setThisDriverData(await res.json())
     }
     getThisDriver(userData.user.email)
-  }, [])
+  })
 
 
   async function getVehicle(registration) {

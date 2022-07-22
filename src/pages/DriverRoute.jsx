@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
-import axios from "axios";
 import { Header } from "../components";
 import UserContext from '../contexts/userContext';
-import { routeData } from "../data/route";
 
 const DriverRoute = () => {
   const { userData } = useContext(UserContext)
@@ -15,7 +13,7 @@ const DriverRoute = () => {
       setRunData(await res.json())
     }
     getRun(userData.user.email)
-  }, [])
+  })
 
 
   return (

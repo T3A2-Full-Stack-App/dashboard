@@ -13,10 +13,7 @@ import {
   Sort,
   Filter,
 } from "@syncfusion/ej2-react-grids";
-import { DataManager } from '@syncfusion/ej2-data';
 import { Header } from "../../components";
-import UserContext from "../../contexts/userContext";
-import { useStateContext } from "../../contexts/ContextProvider";
 
 const vehicleGrid = [
   {

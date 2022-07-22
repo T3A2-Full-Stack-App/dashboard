@@ -1,15 +1,3 @@
-import React from "react";
-import {
-  AiOutlineCalendar,
-
-} from "react-icons/ai";
-import {
-  FiTruck,
-} from "react-icons/fi";
-
-import { FaRoute } from "react-icons/fa";
-import { RiDashboardFill } from "react-icons/ri";
-
 
 export const themeColors = [
   {

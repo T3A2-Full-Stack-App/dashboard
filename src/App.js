@@ -29,8 +29,6 @@ const App = () => {
   const {
     activeMenu,
     themeSettings,
-    setThemeSettings,
-    currentColor,
     currentMode,
   } = useStateContext()
 

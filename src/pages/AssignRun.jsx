@@ -6,9 +6,7 @@ import { Header } from "../components";
 
 const AssignRun = () => {
     const navigate = useNavigate();
-    const [name, setName] = useState();
-    const [area, setArea] = useState();
-    const [driverEmail, setDriverEmail] = useState();
+
 
     const [runsData, setRunsData] = useState([]);
     useEffect(() => {
@@ -98,7 +96,6 @@ const AssignRun = () => {
                                     required
                                     class="appearance-none block w-52 bg-gray-200 text-gray-700 border border-gray-300 rounded py-2 px-3 mb-3 leading-tight focus:outline-none focus:bg-white"
                                     name="name"
-                                    onChange={(e) => setName(e.target.value)}
                                     type="String"
                                     value={thisRunData.name}
                                 ></input>

@@ -13,15 +13,7 @@ import {
   Sort,
   Filter,
 } from "@syncfusion/ej2-react-grids";
-
-import { employeesData } from "../data/dummy";
 import { Header } from "../components";
-import axios from "axios";
-import UserContext from "../contexts/userContext";
-import { useStateContext } from "../contexts/ContextProvider";
-
-
-
 const Drivers = () => {
 
   const columnHeaders = [
