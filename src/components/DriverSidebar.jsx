@@ -83,7 +83,7 @@ const DriverSidebar = () => {
               }
             >
               {<FaRoute />}
-              <span className="capitalize">My Route</span>
+              <span className="capitalize">My Run</span>
             </NavLink>
               <NavLink
               to='/calendar'

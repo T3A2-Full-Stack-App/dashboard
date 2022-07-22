@@ -60,10 +60,10 @@ function NewRuns() {
           className="bg-white dark:text-gray-200
               dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780"
         >
-          <Header title="New Runs" />
+          <Header title="New Run" />
           <div className="mt-3 mb-4 -space-y-px">
             <label className="block text-gray-700 text-sm font-bold mb-2">
-            Run Name:
+            Name:
             </label>
             <input
               required

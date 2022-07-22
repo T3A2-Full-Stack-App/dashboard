@@ -188,7 +188,6 @@ const App = () => {
                     <Route path="/calendar" element={<Calendar />} />
                     <Route path="/driver/vehicle" element={<DriverVehicle />} />
                     <Route path="/driver/route" element={<DriverRoute />} />
-                    <Route path="/driver/vehicle" element={<DriverVehicle />} />
                     <Route path="*" element={<DriverVehicle />} />
                   </Routes>
                 </div>
