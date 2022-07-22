@@ -53,6 +53,7 @@ const EditRuns = () => {
 
   const deleteRun = (runId, e) => {
     e.preventDefault();
+    console.log(runId)
     axios
       .delete(`http://localhost:3405/api/v1/runs/${runId}`)
       .then((response) => {
