@@ -23,7 +23,7 @@ const Sidebar = () => {
     "flex item-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2";
   const normalLink =
     "flex item-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2";
-return (
+  return (
     <div
       className="ml-3 h-screen
     md:overflow-hidden overflow-auto
@@ -56,7 +56,7 @@ return (
           </div>
           <div className="mt-10">
             <p className="text-gray-400 m-3 mt-4 uppercase">Pages</p>
-              <NavLink
+            <NavLink
               to='/runs'
               key='runs'
               onClick={handleCloseSideBar}
@@ -67,10 +67,10 @@ return (
                 isActive ? activeLink : normalLink
               }
             >
-              {<FaRoute/>}
+              {<FaRoute />}
               <span className="capitalize">Runs</span>
-          </NavLink>
-          <NavLink
+            </NavLink>
+            <NavLink
               to='/drivers'
               key='Drivers'
               onClick={handleCloseSideBar}
@@ -97,9 +97,9 @@ return (
             >
               {<FiTruck />}
               <span className="capitalize">Vehicles</span>
-          </NavLink>
-          
-              <NavLink
+            </NavLink>
+
+            <NavLink
               to='/calendar'
               key='Calendar'
               onClick={handleCloseSideBar}
@@ -118,7 +118,7 @@ return (
       )}
     </div>
   );
-  
+
 };
 
 export default Sidebar;

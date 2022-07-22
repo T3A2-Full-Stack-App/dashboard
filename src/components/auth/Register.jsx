@@ -16,6 +16,7 @@ function Register() {
   const { setUserData } = useContext(UserContext);
   const navigate = useNavigate();
 
+
   const submit = async (e) => {
     e.preventDefault();
 
@@ -34,6 +35,7 @@ function Register() {
         {
           email,
           password,
+          role
         }
       );
       setUserData({
@@ -41,7 +43,7 @@ function Register() {
         user: loginResponse.data.user,
       });
       localStorage.setItem("auth-token", loginResponse.data.token);
-      navigate("/");
+      navigate("/login");
     } catch (err) {
       err.response.data.msg && setError(err.response.data.msg);
     }
@@ -53,7 +55,7 @@ function Register() {
         <ErrorNotice message={error} clearError={() => setError(undefined)} />
       )}
       <form
-        className="bg-blue-400 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className="bg-teal-400 shadow-md rounded px-8 pt-6 pb-8 mb-4"
         onSubmit={submit}
       >
         <div className="flex justify-center">
@@ -77,17 +79,18 @@ function Register() {
         </p>
         <div className="mt-2 mb-4 -space-y-px">
           <label className="block text-gray-700 text-sm font-bold mb-2">
-            Role (Admin or Driver):
+            Email:
           </label>
           <input
             required
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            type="text"
-            id="first-name"
-            placeholder="Enter Role"
-            onChange={(e) => setFirstName(e.target.value)}
+            type="email"
+            id="email"
+            placeholder="Email Address"
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
+        
         <div className="mt-2 mb-4 -space-y-px">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             First Name:
@@ -114,19 +117,7 @@ function Register() {
             onChange={(e) => setLastName(e.target.value)}
           />
         </div>
-        <div className="mt-2 mb-4 -space-y-px">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
-            Email:
-          </label>
-          <input
-            required
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            type="email"
-            id="email"
-            placeholder="Email Address"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
+        
         <div className="mt-2 mb-4 -space-y-px">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             Password:
@@ -151,6 +142,19 @@ function Register() {
             placeholder="Confirm password"
             onChange={(e) => setPasswordCheck(e.target.value)}
           />
+        </div>
+        <div className="mt-8 mb-4 -space-y-px">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            for="role"
+          >
+            Role:
+          </label>
+            <select required id="role" onChange={(e) => setRole(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <option value="" disabled selected hidden>Select role</option>
+            <option value="admin">Admin</option>
+            <option value="driver">Driver</option>
+          </select>
         </div>
         <button
           className="mt-2 bg-blue-700 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

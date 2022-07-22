@@ -16,6 +16,7 @@ function NewVehicle() {
     registration: "",
     kilometers: "",
     nextService: "",
+    condition: "",
   });
 
   const handleChange = (e) => {
@@ -37,6 +38,7 @@ function NewVehicle() {
       registration: "",
       kilometers: "",
       nextService: "",
+      condition: "",
     });
 
     const driverData = {
@@ -48,6 +50,7 @@ function NewVehicle() {
       registration: data.registration,
       kilometers: data.kilometers,
       nextService: data.nextService,
+      condition: data.condition,
     };
     axios
       .post("http://localhost:3405/api/v1/vehicles", driverData)
@@ -84,7 +87,7 @@ function NewVehicle() {
             <input
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Car Make"
+              placeholder="Ford"
               type="String"
               name="make"
               value={data.make}
@@ -98,7 +101,7 @@ function NewVehicle() {
             <input
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Car Model"
+              placeholder="Transit"
               type="String"
               name="model"
               value={data.model}
@@ -112,7 +115,7 @@ function NewVehicle() {
             <input
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Model Year"
+              placeholder="2022"
               type="Number"
               name="year"
               value={data.year}
@@ -126,7 +129,7 @@ function NewVehicle() {
             <input
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Car Registration"
+              placeholder="ABC123"
               type="String"
               name="registration"
               value={data.registration}
@@ -140,7 +143,7 @@ function NewVehicle() {
             <input
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Enter Kilometers"
+              placeholder="10000"
               type="Number"
               name="kilometers"
               value={data.kilometers}
@@ -154,10 +157,24 @@ function NewVehicle() {
             <input
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Enter Kilometers"
+              placeholder="15000"
               type="Number"
               name="nextService"
               value={data.nextService}
+              onChange={handleChange}
+            />
+          </div>
+           <div className="mt-3 mb-4 -space-y-px">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Condition:
+            </label>
+            <input
+              required
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Satisfactory"
+              type="String"
+              name="condition"
+              value={data.condition}
               onChange={handleChange}
             />
           </div>

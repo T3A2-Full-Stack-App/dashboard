@@ -30,7 +30,7 @@ const Navbar = () => {
     currentColor,
   } = useStateContext();
 
-  const {userData} = useContext(UserContext);
+  const { userData } = useContext(UserContext);
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -66,13 +66,13 @@ const Navbar = () => {
           hover:bg-light-gray rounded-lg"
           >
             <p className="absolute right-10 mr-24">
-                    
+
               <span className="text-gray-400 text-14">Hi  </span>{" "}
               <span className="text-gray-400 wml-1 text-14">{userData.user.email}</span>
             </p>
             <div className='relative bottom-1'>
               <Logout />
-              </div>
+            </div>
           </div>
         </TooltipComponent>
 

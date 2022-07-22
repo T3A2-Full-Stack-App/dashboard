@@ -57,7 +57,7 @@ const DriverSidebar = () => {
           </div>
           <div className="mt-10">
             <p className="text-gray-400 m-3 mt-4 uppercase">Pages</p>
-              <NavLink
+            <NavLink
               to='/driver/vehicle'
               key='vehicle'
               onClick={handleCloseSideBar}
@@ -68,7 +68,7 @@ const DriverSidebar = () => {
                 isActive ? activeLink : normalLink
               }
             >
-              {<FiTruck/>}
+              {<FiTruck />}
               <span className="capitalize">My Vehicle</span>
             </NavLink>
             <NavLink
@@ -85,7 +85,7 @@ const DriverSidebar = () => {
               {<FaRoute />}
               <span className="capitalize">My Run</span>
             </NavLink>
-              <NavLink
+            <NavLink
               to='/calendar'
               key='Calendar'
               onClick={handleCloseSideBar}

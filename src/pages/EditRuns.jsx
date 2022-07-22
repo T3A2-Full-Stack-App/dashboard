@@ -9,7 +9,7 @@ const EditRuns = () => {
   const [newArea, setNewArea] = useState();
 
   const [runsData, setRunsData] = useState([]);
-   useEffect(() => {
+  useEffect(() => {
     async function getRunsData() {
       const res = await fetch("http://localhost:3405/api/v1/runs");
       setRunsData(await res.json());
@@ -23,7 +23,7 @@ const EditRuns = () => {
     setThisRunData(await res.json());
     console.log(thisRunData);
   }
- 
+
 
   const submit = async (e, runId) => {
     e.preventDefault();

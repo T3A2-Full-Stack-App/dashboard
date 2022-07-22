@@ -25,42 +25,42 @@ import { useStateContext } from "../contexts/ContextProvider";
 const Drivers = () => {
 
   const columnHeaders = [
-  {
-    field: "_id",
-    headerText: "Employee ID",
-    width: "80",
-    textAlign: "Left",
+    {
+      field: "_id",
+      headerText: "Employee ID",
+      width: "80",
+      textAlign: "Left",
     },
-  {
-    field: "email",
-    headerText: "Email",
-    width: "100",
-    textAlign: "Left",
-  },
-  {
-    field: "firstName",
-    headerText: "Firstname",
-    width: "50",
-    textAlign: "Left",
-  },
     {
-    field: "lastName",
-    headerText: "Lastname",
-    width: "50",
-    textAlign: "Left",
-  },
-  {
-    field: "vehicleRegistration",
-    headerText: "Vehicle Registration",
-    width: "80",
-    textAlign: "Left",
-  },
+      field: "email",
+      headerText: "Email",
+      width: "100",
+      textAlign: "Left",
+    },
     {
-    field: "runName",
-    headerText: "Run",
-    width: "70",
-    textAlign: "Left",
-  }
+      field: "firstName",
+      headerText: "Firstname",
+      width: "50",
+      textAlign: "Left",
+    },
+    {
+      field: "lastName",
+      headerText: "Lastname",
+      width: "50",
+      textAlign: "Left",
+    },
+    {
+      field: "vehicleRegistration",
+      headerText: "Vehicle Registration",
+      width: "80",
+      textAlign: "Left",
+    },
+    {
+      field: "runName",
+      headerText: "Run",
+      width: "70",
+      textAlign: "Left",
+    }
   ];
 
 
@@ -77,44 +77,44 @@ const Drivers = () => {
 
   return (
     <>
-    <div className="container mt-50 mx-auto m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-      <Header title="Drivers" />
-      <GridComponent
-        id="gridcomp"
+      <div className="container mt-50 mx-auto m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
+        <Header title="Drivers" />
+        <GridComponent
+          id="gridcomp"
           dataSource={driverData}
-        allowFiltering
-        allowPaging
-        allowSorting
-        toolbar={["Search"]}
-        editSettings={{ allowDeleting: true, allowEditing: true }}
-        width="auto"
-      >
-        <ColumnsDirective>
-          {columnHeaders.map((item, index) => (
-            <ColumnDirective key={index} {...item} />
-          ))}
-        </ColumnsDirective>
-        <Inject
-          services={[Page, Search, Toolbar, Selection, Edit, Sort, Filter]}
+          allowFiltering
+          allowPaging
+          allowSorting
+          toolbar={["Search"]}
+          editSettings={{ allowDeleting: true, allowEditing: true }}
+          width="auto"
+        >
+          <ColumnsDirective>
+            {columnHeaders.map((item, index) => (
+              <ColumnDirective key={index} {...item} />
+            ))}
+          </ColumnsDirective>
+          <Inject
+            services={[Page, Search, Toolbar, Selection, Edit, Sort, Filter]}
           />
-          
+
         </GridComponent>
-           <div className="flex justify-end pt-5">
-        <Link to="/vehicle/assign">
-          <button class="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
-            Assign Vehicle to Driver
-          </button>
+        <div className="flex justify-end pt-5">
+          <Link to="/vehicle/assign">
+            <button class="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
+              Assign Vehicle to Driver
+            </button>
           </Link>
-                  <Link to="/runs/assign">
-          <button class="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
-            Assign Driver to Run
-          </button>
+          <Link to="/runs/assign">
+            <button class="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
+              Assign Driver to Run
+            </button>
           </Link>
+        </div>
       </div>
-      </div> 
-      
-      </>
+
+    </>
   );
-  
+
 };
 export default Drivers;
