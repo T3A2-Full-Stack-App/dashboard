@@ -52,25 +52,25 @@ const vehicleGrid = [
   {
     field: "kilometers",
     headerText: "Kilometers",
-    width: "80",
+    width: "120",
     textAlign: "Left",
   },
   {
     field: "nextService",
     headerText: "Next Service",
-    width: "80",
+    width: "120",
     textAlign: "Left",
   },
   {
     field:  "kmRemaining",
     headerText: "Kilometers Until Service",
-    width: "80",
+    width: "120",
     textAlign: "Left",
   },
   {
     field: "condition",
     headerText: "Condition Report",
-    width: "170",
+    width: "140",
     textAlign: "Left",
   },
 ];

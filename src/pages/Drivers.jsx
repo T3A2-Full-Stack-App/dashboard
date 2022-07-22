@@ -28,32 +28,38 @@ const Drivers = () => {
   {
     field: "_id",
     headerText: "Employee ID",
-    width: "100",
-    textAlign: "Center",
+    width: "80",
+    textAlign: "Left",
     },
   {
     field: "email",
     headerText: "Email",
-    width: "120",
-    textAlign: "Center",
+    width: "100",
+    textAlign: "Left",
   },
   {
     field: "firstName",
     headerText: "Firstname",
     width: "50",
-    textAlign: "Center",
+    textAlign: "Left",
   },
     {
     field: "lastName",
     headerText: "Lastname",
     width: "50",
-    textAlign: "Center",
+    textAlign: "Left",
   },
   {
     field: "vehicleRegistration",
     headerText: "Vehicle Registration",
+    width: "80",
+    textAlign: "Left",
+  },
+    {
+    field: "runName",
+    headerText: "Run",
     width: "70",
-    textAlign: "Center",
+    textAlign: "Left",
   }
   ];
 
@@ -97,6 +103,11 @@ const Drivers = () => {
         <Link to="/vehicle/assign">
           <button class="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
             Assign Vehicle to Driver
+          </button>
+          </Link>
+                  <Link to="/runs/assign">
+          <button class="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
+            Assign Driver to Run
           </button>
           </Link>
       </div>

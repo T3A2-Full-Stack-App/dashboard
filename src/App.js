@@ -17,7 +17,8 @@ import {
   EditVehicle,
   NewRuns,
   EditRuns,
-  AssignDriver
+  AssignDriver,
+  AssignRun
 } from "./pages";
 
 import DriverRoute from "./pages/DriverRoute";
@@ -115,7 +116,6 @@ const App = () => {
                   activeMenu ? "md:ml-72" : "flex-2"
                 }`}
               >
-                
                 <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
                   <Navbar />
                 </div>
@@ -125,6 +125,7 @@ const App = () => {
                     <Route path="/runs" element={<Runs />} />
                     <Route path="/runs/new" element={<NewRuns />} />
                     <Route path="/runs/edit" element={<EditRuns />} />
+                    <Route path="/runs/assign" element={<AssignRun />} />
                     <Route path="/drivers" element={<Drivers />} />
                     <Route path="/vehicles" element={<VehicleList />} />
                     <Route path="/calendar" element={<Calendar />} />
