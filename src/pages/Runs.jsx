@@ -53,12 +53,12 @@ const Runs = () => {
         </GridComponent>
         <div className="flex justify-end pt-5">
           <Link to="/runs/new">
-            <button class="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
+            <button className="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
               New Runs
             </button>
           </Link>
           <Link to="/runs/edit">
-            <button class="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
+            <button className="mt-2 h-8 px-4 mx-1 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline">
               Edit Runs
             </button>
           </Link>

@@ -51,7 +51,7 @@ function Login() {
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
           Login to your Account
         </h2>
-        <p className="mt-2 text-center text-sm text-gray-900   mt-5">
+        <p className="mt-2 text-center text-sm text-gray-900">
           Don't have an account yet?{" "}
           <Link
             to="/register"

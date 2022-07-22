@@ -66,7 +66,7 @@ const Navbar = () => {
           hover:bg-light-gray rounded-lg"
             // onClick={() => handleClick("userProfile")}
           >
-            <p className="fixed top-8 right-10">
+            <p className="fixed top-8 right-10 mr-24">
               <span className="text-gray-400 text-14">Hi  </span>{" "}
               <span className="text-gray-400 wml-1 text-14">{userData.user.email}</span>
             </p>
