@@ -34,7 +34,7 @@ const Drivers = () => {
   {
     field: "email",
     headerText: "Email",
-    width: "80",
+    width: "120",
     textAlign: "Center",
   },
   {
