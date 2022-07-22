@@ -13,10 +13,30 @@ import {
   Sort,
   Filter,
 } from "@syncfusion/ej2-react-grids";
-import { runsGrid } from "../data/runsData";
 import { Header } from "../components";
 
 const Runs = () => {
+
+  const runsGrid = [
+  {
+    field: "name",
+    headerText: "Route",
+    width: "100",
+    textAlign: "Center",
+  },
+  {
+    field: "area",
+    headerText: "Location",
+    width: "100",
+    textAlign: "Center",
+  },
+  {
+    field: "driverEmail",
+    headerText: "Driver",
+    width: "130",
+    textAlign: "Center",
+  },
+];
   const [runsData, setRunsData] = useState([]);
 
   useEffect(() => {
@@ -38,7 +58,6 @@ const Runs = () => {
           allowPaging
           allowSorting
           toolbar={["Search"]}
-          editSettings={{ allowDeleting: false, allowEditing: false }}
           width="auto"
         >
           <ColumnsDirective>
