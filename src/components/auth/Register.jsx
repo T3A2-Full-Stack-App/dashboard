@@ -16,7 +16,6 @@ function Register() {
   const { setUserData } = useContext(UserContext);
   const navigate = useNavigate();
 
-
   const submit = async (e) => {
     e.preventDefault();
 
@@ -30,20 +29,17 @@ function Register() {
         role,
       };
       await axios.post("http://localhost:3405/api/v1/users/register", newUser);
+      const loginUser = { email, password, role };
       const loginResponse = await axios.post(
         "http://localhost:3405/api/v1/users/login",
-        {
-          email,
-          password,
-          role
-        }
+        loginUser
       );
       setUserData({
         token: loginResponse.data.token,
-        user: loginResponse.data.user,
+        user: loginUser,
       });
       localStorage.setItem("auth-token", loginResponse.data.token);
-      navigate("/login");
+      navigate("/runs");
     } catch (err) {
       err.response.data.msg && setError(err.response.data.msg);
     }
@@ -55,7 +51,7 @@ function Register() {
         <ErrorNotice message={error} clearError={() => setError(undefined)} />
       )}
       <form
-        className="bg-teal-400 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className="bg-orange-400 shadow-md rounded px-8 pt-6 pb-8 mb-4"
         onSubmit={submit}
       >
         <div className="flex justify-center">
