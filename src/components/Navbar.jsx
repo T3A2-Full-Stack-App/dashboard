@@ -3,6 +3,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { useStateContext } from "../contexts/ContextProvider";
 import UserContext from '../contexts/userContext';
+import Logout from "./auth/Logout";
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
@@ -64,13 +65,15 @@ const Navbar = () => {
           <div
             className="flex items-center gap-2 cursor-pointer p-1 
           hover:bg-light-gray rounded-lg"
-            // onClick={() => handleClick("userProfile")}
           >
-            <p className="fixed top-8 right-10 mr-24">
+            <p className="absolute right-10 mr-24">
+                    
               <span className="text-gray-400 text-14">Hi  </span>{" "}
               <span className="text-gray-400 wml-1 text-14">{userData.user.email}</span>
             </p>
-            {/* <MdKeyboardArrowDown className="text-gray-400 text-14" /> */}
+            <div className='relative bottom-1'>
+              <Logout />
+              </div>
           </div>
         </TooltipComponent>
 

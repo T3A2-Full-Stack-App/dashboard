@@ -2,25 +2,19 @@ import axios from "axios";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import UserContext from "./contexts/userContext";
-import Logout from "./components/auth/Logout";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-
 import { Navbar, Sidebar, ThemeSettings, DriverSidebar } from "./components";
 import {
-  Dashboard,
   Calendar,
-  Employees,
-  Vehicles,
   Runs,
   Drivers,
   DriverVehicle,
   VehicleList,
   NewVehicle,
   EditVehicle,
-  EditDriver,
   NewRuns,
   EditRuns,
   AssignDriver
@@ -121,9 +115,7 @@ const App = () => {
                   activeMenu ? "md:ml-72" : "flex-2"
                 }`}
               >
-                <div className="flex justify-end mt-4 mr-6">
-                  <Logout />
-                </div>
+                
                 <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
                   <Navbar />
                 </div>
@@ -148,7 +140,7 @@ const App = () => {
           </UserContext.Provider>
         </BrowserRouter>
       </div>
-    );
+    )
   } else if (userData.user.role === "driver") {
     return (
       <div className={currentMode === "Dark" ? "dark" : ""}>
@@ -186,9 +178,6 @@ const App = () => {
                   activeMenu ? "md:ml-72" : "flex-2"
                 }`}
               >
-                <div className="flex justify-end mt-4 mr-6">
-                  <Logout />
-                </div>
                 <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
                   <Navbar />
                 </div>

@@ -1,7 +1,6 @@
 export { default as Runs } from "./Runs";
 export { default as NewRuns } from "./NewRuns";
 export { default as EditRuns } from "./EditRuns";
-export { default as Dashboard } from "./Dashboard";
 export { default as Drivers } from "./Drivers";
 export { default as Vehicles } from "./Vehicles";
 export { default as Calendar } from "./Calendar";
