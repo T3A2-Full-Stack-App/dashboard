@@ -89,29 +89,16 @@ function NewRuns() {
               onChange={handleChange}
             />
           </div>
-          {/* <div className="mt-3 mb-4 -space-y-px">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              user:
-            </label>
-            <input
-              required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Enter User Email"
-              type="String"
-              name="userEmail"
-              value={runsdata.userEmail}
-              onChange={handleChange}
-            />
-          </div> */}
+
           <button
             type="submit"
-            class="h-8 px-4 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline"
+            class="h-8 px-4 ml-80 text-sm bg-blue-500 hover:bg-blue-700 text-white transition-colors duration-15 rounded-lg focus:shadow-outline"
           >
-            Submit
+            Create Run
           </button>
           <Link
             to="/runs"
-            className="flex justify-center font-medium mt-8 text-teal-500 hover:text-teal-200 "
+            className="flex justify-center font-medium mt-8 text-blue-500 hover:text-blue-700 "
           >
             Back to Runs Lists
           </Link>
