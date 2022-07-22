@@ -13,7 +13,7 @@ const AssignRun = () => {
     const [runsData, setRunsData] = useState([]);
     useEffect(() => {
         async function getRunsData() {
-            const res = await fetch("http://localhost:3405/api/v1/runs");
+            const res = await fetch("https://fleetwizzard.herokuapp.com/api/v1/runs");
             setRunsData(await res.json());
         }
         getRunsData();
@@ -21,7 +21,7 @@ const AssignRun = () => {
 
     const [thisRunData, setThisRunData] = useState([]);
     async function getThisRun(area) {
-        const res = await fetch(`http://localhost:3405/api/v1/runs/${area}`);
+        const res = await fetch(`https://fleetwizzard.herokuapp.com/api/v1/runs/${area}`);
         setThisRunData(await res.json());
         console.log(thisRunData);
     }
@@ -29,7 +29,7 @@ const AssignRun = () => {
     const [driverData, setDriverData] = useState([])
     useEffect(() => {
         async function getDriverData() {
-            const res = await fetch('http://localhost:3405/api/v1/drivers')
+            const res = await fetch('https://fleetwizzard.herokuapp.com/api/v1/drivers')
             setDriverData(await res.json())
         }
         getDriverData()
@@ -37,7 +37,7 @@ const AssignRun = () => {
 
     const [thisDriverData, setThisDriverData] = useState([])
     async function getThisDriver(driverEmail) {
-        const res = await fetch(`http://localhost:3405/api/v1/drivers/get/${driverEmail}/find`)
+        const res = await fetch(`https://fleetwizzard.herokuapp.com/api/v1/drivers/get/${driverEmail}/find`)
         setThisDriverData(await res.json())
         console.log(thisDriverData)
     }
@@ -49,13 +49,13 @@ const AssignRun = () => {
         const driverEmail = { driverEmail: driver.email }
         const runName = { runName: run.name }
 
-        axios.put(`http://localhost:3405/api/v1/runs/assigndriver/${run._id}`,
+        axios.put(`https://fleetwizzard.herokuapp.com/api/v1/runs/assigndriver/${run._id}`,
             driverEmail
         ).then((response) => {
             console.log(response)
         })
 
-        axios.put(`http://localhost:3405/api/v1/drivers/assignrun/${driver._id}`,
+        axios.put(`https://fleetwizzard.herokuapp.com/api/v1/drivers/assignrun/${driver._id}`,
             runName
         ).then((response) => {
             console.log(response)

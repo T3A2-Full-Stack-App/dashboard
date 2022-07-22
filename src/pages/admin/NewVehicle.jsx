@@ -53,7 +53,7 @@ function NewVehicle() {
       condition: data.condition,
     };
     axios
-      .post("http://localhost:3405/api/v1/vehicles", driverData)
+      .post("https://fleetwizzard.herokuapp.com/api/v1/vehicles", driverData)
       .then((response) => {
         console.log(response);
         navigate("/vehicles");
@@ -169,7 +169,6 @@ function NewVehicle() {
               Condition:
             </label>
             <input
-              required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Satisfactory"
               type="String"

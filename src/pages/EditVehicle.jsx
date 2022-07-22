@@ -9,7 +9,7 @@ const EditVehicle = () => {
     const [vehicleData, setVehicleData] = useState([])
 
     async function getVehicle(registration) {
-        const res = await fetch(`http://localhost:3405/api/v1/vehicles/${registration}`)
+        const res = await fetch(`https://fleetwizzard.herokuapp.com/api/v1/vehicles/${registration}`)
         setVehicleData(await res.json())
     }
 
@@ -25,7 +25,7 @@ const EditVehicle = () => {
     const [vehiclesData, setVehiclesData] = useState([])
     useEffect(() => {
         async function getVehiclesData() {
-            const res = await fetch('http://localhost:3405/api/v1/vehicles')
+            const res = await fetch('https://fleetwizzard.herokuapp.com/api/v1/vehicles')
             setVehiclesData(await res.json())
         }
         getVehiclesData()
@@ -36,7 +36,7 @@ const EditVehicle = () => {
         e.preventDefault();
         const editedVehicle = { registration, make, model, year, kilometers, nextService, condition };
         axios.put(
-            `http://localhost:3405/api/v1/vehicles/${registration}`,
+            `https://fleetwizzard.herokuapp.com/api/v1/vehicles/${registration}`,
             editedVehicle
         ).then((response) => {
             console.log(response)
@@ -58,7 +58,7 @@ const EditVehicle = () => {
     const deleteVehicle = (vehicleId, e) => {
         e.preventDefault()
         axios.delete(
-            `http://localhost:3405/api/v1/vehicles/${vehicleId}`
+            `https://fleetwizzard.herokuapp.com/api/v1/vehicles/${vehicleId}`
         ).then((response) => {
             navigate("/vehicles");
         })

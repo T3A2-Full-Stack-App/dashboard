@@ -35,7 +35,7 @@ function NewRuns() {
     //   userEmail: runsdata.userEmail,
     };
     axios
-      .post("http://localhost:3405/api/v1/runs", RunsData)
+      .post("https://fleetwizzard.herokuapp.com/api/v1/runs", RunsData)
       .then((response) => {
         console.log(response);
         navigate("/runs");

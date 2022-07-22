@@ -1,10 +1,10 @@
-import axios from "axios";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
-import UserContext from "./contexts/userContext";
-import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Navbar, Sidebar, ThemeSettings, DriverSidebar } from "./components";
+import axios from "axios"
+import Register from "./components/auth/Register"
+import Login from "./components/auth/Login"
+import UserContext from "./contexts/userContext"
+import React, { useEffect, useState } from "react"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { Navbar, Sidebar, ThemeSettings, DriverSidebar } from "./components"
 import {
   Calendar,
   Runs,
@@ -16,14 +16,14 @@ import {
   NewRuns,
   EditRuns,
   AssignDriver,
-  AssignRun
-} from "./pages";
+  AssignRun,
+} from "./pages"
 
-import DriverRoute from "./pages/DriverRoute";
+import DriverRoute from "./pages/DriverRoute"
 
-import { useStateContext } from "./contexts/ContextProvider";
+import { useStateContext } from "./contexts/ContextProvider"
 
-import "./App.css";
+import "./App.css"
 
 const App = () => {
   const {
@@ -32,37 +32,40 @@ const App = () => {
     setThemeSettings,
     currentColor,
     currentMode,
-  } = useStateContext();
+  } = useStateContext()
 
   const [userData, setUserData] = useState({
     token: undefined,
     user: undefined,
-  });
+  })
 
   useEffect(() => {
     const checkLoggedIn = async () => {
-      let token = localStorage.getItem("auth-token");
+      let token = localStorage.getItem("auth-token")
       if (token === null) {
-        localStorage.setItem("auth-token", "");
-        token = "";
+        localStorage.setItem("auth-token", "")
+        token = ""
       }
       const tokenResponse = await axios.post(
-        "http://localhost:3405/api/v1/users/tokenIsValid",
+        "https://fleetwizzard.herokuapp.com/api/v1/users/tokenIsValid",
         null,
         { headers: { "x-auth-token": token } }
-      );
+      )
       if (tokenResponse.data) {
-        const userRes = await axios.get("http://localhost:3405/api/v1/users/", {
-          headers: { "x-auth-token": token },
-        });
+        const userRes = await axios.get(
+          "https://fleetwizzard.herokuapp.com/api/v1/users/",
+          {
+            headers: { "x-auth-token": token },
+          }
+        )
         setUserData({
           token,
           user: userRes.data,
-        });
+        })
       }
-    };
-    checkLoggedIn();
-  }, []);
+    }
+    checkLoggedIn()
+  }, [])
 
   if (!userData.user) {
     return (
@@ -76,7 +79,7 @@ const App = () => {
           </Routes>
         </UserContext.Provider>
       </BrowserRouter>
-    );
+    )
   } else if (userData.user.role === "admin") {
     return (
       <div className={currentMode === "Dark" ? "dark" : ""}>
@@ -86,8 +89,7 @@ const App = () => {
               <div
                 className="fixed right-4 bottom-4"
                 style={{ zIndex: "1000" }}
-              >
-              </div>
+              ></div>
               {activeMenu ? (
                 <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
                   <Sidebar />
@@ -137,8 +139,7 @@ const App = () => {
               <div
                 className="fixed right-4 bottom-4"
                 style={{ zIndex: "1000" }}
-              >
-              </div>
+              ></div>
               {activeMenu ? (
                 <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
                   <DriverSidebar />
@@ -170,8 +171,8 @@ const App = () => {
           </UserContext.Provider>
         </BrowserRouter>
       </div>
-    );
+    )
   }
-};
+}
 
-export default App;
+export default App

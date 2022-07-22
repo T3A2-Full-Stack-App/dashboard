@@ -28,10 +28,10 @@ function Register() {
         lastName,
         role,
       };
-      await axios.post("http://localhost:3405/api/v1/users/register", newUser);
+      await axios.post("https://fleetwizzard.herokuapp.com/api/v1/users/register", newUser);
       const loginUser = { email, password, role };
       const loginResponse = await axios.post(
-        "http://localhost:3405/api/v1/users/login",
+        "https://fleetwizzard.herokuapp.com/api/v1/users/login",
         loginUser
       );
       setUserData({
