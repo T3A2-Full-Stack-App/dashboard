@@ -28,10 +28,13 @@ function Register() {
         lastName,
         role,
       };
-      await axios.post("http://localhost:3405/api/v1/users/register", newUser);
+      await axios.post(
+        "https://fleetwizzard.herokuapp.com/api/v1/users/register",
+        newUser
+      );
       const loginUser = { email, password, role };
       const loginResponse = await axios.post(
-        "http://localhost:3405/api/v1/users/login",
+        "https://fleetwizzard.herokuapp.com/api/v1/users/login",
         loginUser
       );
       setUserData({
@@ -86,7 +89,7 @@ function Register() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        
+
         <div className="mt-2 mb-4 -space-y-px">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             First Name:
@@ -113,7 +116,7 @@ function Register() {
             onChange={(e) => setLastName(e.target.value)}
           />
         </div>
-        
+
         <div className="mt-2 mb-4 -space-y-px">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             Password:
@@ -146,8 +149,15 @@ function Register() {
           >
             Role:
           </label>
-            <select required id="role" onChange={(e) => setRole(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-            <option value="" disabled selected hidden>Select role</option>
+          <select
+            required
+            id="role"
+            onChange={(e) => setRole(e.target.value)}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          >
+            <option value="" disabled selected hidden>
+              Select role
+            </option>
             <option value="admin">Admin</option>
             <option value="driver">Driver</option>
           </select>
